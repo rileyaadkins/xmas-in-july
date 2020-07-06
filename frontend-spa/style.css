@@ -6,3 +6,8 @@
   --color5-gainsboro: hsla(207, 4%, 91%, 1);
   --color6-rich-black: #050609;
 }
+
+.container{
+    background-color: var(--color1-bottle-green);
+
+}
