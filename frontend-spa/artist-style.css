@@ -47,3 +47,11 @@ nav {
   box-shadow: 0 -2px 2px aliceblue, 0 0 2px aliceblue inset;
   filter: grayscale(0.7);
 }
+
+.aside {
+  height: 400px;
+  width: 250px;
+  background-color: var(--color5-gainsboro);
+  margin-left: 25px;
+  border-radius: 20px;
+}

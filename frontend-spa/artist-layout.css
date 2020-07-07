@@ -72,4 +72,5 @@ nav li {
   transition: all 0.1s;
   background-size: cover;
   background-image: url(./images/MC.jpeg);
+  margin: 0 auto;
 }
