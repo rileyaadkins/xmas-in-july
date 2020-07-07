@@ -28,19 +28,21 @@ h1 {
 nav {
   background-color: var(--color2-sizzling-red);
 }
-.artist-name {
+.album-name {
   color: var(--color6-rich-black);
   display: inline-block;
   margin-top: 20px;
   font-size: 20pt;
   font-family: "Poppins", sans-serif;
+  word-wrap: break-word;
+  max-width: 200px;
 }
-.artist-list li:hover span {
+.album-list li:hover span {
   font-weight: bolder;
   text-shadow: 0 -2px 2px aliceblue;
 }
 
-.artist-list li:hover div {
+.album-list li:hover div {
   box-shadow: 0 -2px 2px aliceblue, 0 0 2px aliceblue inset;
   filter: grayscale(0.7);
 }
