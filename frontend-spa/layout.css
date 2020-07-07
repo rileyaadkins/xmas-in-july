@@ -31,3 +31,37 @@ nav li {
   padding: 10px;
   font-family: "Poppins", sans-serif;
 }
+
+.artist-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.artist-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: all 0.1s;
+  background-size: cover;
+}
+.artist-list li:nth-child(1) div {
+  background-image: url(./images/MC.jpeg);
+}
+.artist-list li:nth-child(2) div {
+  background-image: url(./images/wham!.png);
+}
+.artist-list li:nth-child(3) div {
+  background-image: url(./images/nsync.jpg);
+}
+.artist-list li:nth-child(4) div {
+  background-image: url(./images/MB.png);
+}
+
+.artist-list li:nth-child(5) div {
+  background-image: url(./images/kidsbop.png);
+}
+.artist-pic:hover {
+  transform: scale(1.1);
+}
