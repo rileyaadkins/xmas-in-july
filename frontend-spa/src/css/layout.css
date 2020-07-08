@@ -47,20 +47,20 @@ nav li {
   background-size: cover;
 }
 .artist-list li:nth-child(1) div {
-  background-image: url(./images/MC.jpeg);
+  background-image: url(/src/images/MC.jpeg);
 }
 .artist-list li:nth-child(2) div {
-  background-image: url(./images/wham!.png);
+  background-image: url(/src/images/wham!.png);
 }
 .artist-list li:nth-child(3) div {
-  background-image: url(./images/nsync.jpg);
+  background-image: url(/src/images/nsync.jpg);
 }
 .artist-list li:nth-child(4) div {
-  background-image: url(./images/MB.png);
+  background-image: url(/src/images/MB.png);
 }
 
 .artist-list li:nth-child(5) div {
-  background-image: url(./images/kidsbop.png);
+  background-image: url(/src/images/kidsbop.png);
 }
 .artist-pic:hover {
   transform: scale(1.1);

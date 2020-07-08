@@ -50,8 +50,12 @@ nav {
 
 .aside {
   height: 400px;
-  width: 250px;
+  width: 300px;
   background-color: var(--color5-gainsboro);
   margin-left: 25px;
   border-radius: 20px;
+}
+
+.artist-info {
+  font-family: "Poppins", sans-serif;
 }

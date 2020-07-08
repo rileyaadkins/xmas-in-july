@@ -15,28 +15,28 @@ function Artist(name, imgSrc, album, artLink, albLink) {
 }
 
 const mc = "Mariah Carey";
-const mcImg = "./images/MC.jpeg";
-const mcAlbumImg = "./images/MC-cover.png";
+const mcImg = "./src/images/MC.jpeg";
+const mcAlbumImg = "./src/images/MC-cover.png";
 const mcArtistLink = "./artist.html";
 const mcAlbumLink = "#";
 const w = "Wham!";
-const wImg = "./images/wham!.png";
-const wAlbumImg = "./images/Last-Christmas-Wham.png";
+const wImg = "./src/images/wham!.png";
+const wAlbumImg = "./src/images/Last-Christmas-Wham.png";
 const wArtistLink = "#";
 const wAlbumLink = "#";
 const ns = "NSYNC";
-const nsImg = "./images/nsync.jpg";
-const nsAlbumImg = "./images/Home_for_Christmas_nsync.png";
+const nsImg = "./src/images/nsync.jpg";
+const nsAlbumImg = "./src/images/Home_for_Christmas_nsync.png";
 const nsArtistLink = "#";
 const nsAlbumLink = "#";
 const mb = "Michael Buble";
-const mbImg = "./images/MB.png";
-const mbAlbumImg = "./images/Christmas-Buble.png";
+const mbImg = "./src/images/MB.png";
+const mbAlbumImg = "./src/images/Christmas-Buble.png";
 const mbArtistLink = "#";
 const mbAlbumLink = "#";
 const kb = "Kidz Bop";
-const kbImg = "./images/kidsbop.png";
-const kbAlbumImg = "./images/Kidz-Bob-Christmas.png";
+const kbImg = "./src/images/kidsbop.png";
+const kbAlbumImg = "./src/images/Kidz-Bob-Christmas.png";
 const kbArtistLink = "#";
 const kbAlbumLink = "#";
 

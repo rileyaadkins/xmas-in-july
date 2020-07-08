@@ -47,20 +47,20 @@ nav li {
   background-size: cover;
 }
 .album-list li:nth-child(1) div {
-  background-image: url(./images/MC-cover.png);
+  background-image: url(/src/images/MC-cover.png);
 }
 .album-list li:nth-child(2) div {
-  background-image: url(./images/Last-Christmas-Wham.png);
+  background-image: url(/src/images/Last-Christmas-Wham.png);
 }
 .album-list li:nth-child(3) div {
-  background-image: url(./images/Home_for_Christmas_nsync.png);
+  background-image: url(/src/images/Home_for_Christmas_nsync.png);
 }
 .album-list li:nth-child(4) div {
-  background-image: url(./images/Christmas-Buble.png);
+  background-image: url(/src/images/Christmas-Buble.png);
 }
 
 .album-list li:nth-child(5) div {
-  background-image: url(./images/Kidz-Bob-Christmas.png);
+  background-image: url(/src/images/Kidz-Bob-Christmas.png);
 }
 .album-pic:hover {
   transform: scale(1.1);
