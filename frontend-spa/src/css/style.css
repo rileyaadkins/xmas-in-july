@@ -17,6 +17,7 @@ a:link {
 a:visited {
   color: black;
 }
+
 .container {
   background-color: var(--color1-bottle-green);
 }
