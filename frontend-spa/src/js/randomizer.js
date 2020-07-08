@@ -29,7 +29,7 @@ const nsImg = "./src/images/nsync.jpg";
 const nsAlbumImg = "./src/images/Home_for_Christmas_nsync.png";
 const nsArtistLink = "#";
 const nsAlbumLink = "#";
-const mb = "Michael Buble";
+const mb = "Michael Bublé";
 const mbImg = "./src/images/MB.png";
 const mbAlbumImg = "./src/images/Christmas-Buble.png";
 const mbArtistLink = "#";
@@ -55,7 +55,7 @@ let randomArtist = artists[x];
 
 nameDiv.innerHTML = randomArtist.name;
 nameDiv.style.fontSize = "40pt";
-nameDiv.style.fontFamily = "cursive";
+nameDiv.style.fontFamily = "Poppins, cursive";
 
 nameDiv.addEventListener("mouseover",()=>{
   nameDiv.style.fontWeight = "bolder";
@@ -70,7 +70,7 @@ nameDiv.addEventListener("mouseout",()=>{
 artistImg.style.backgroundImage = "url("+randomArtist.imgSrc+")";
 artistImg.style.height = "200px";
 artistImg.style.width = "200px";
-artistImg.style.margin = "0 auto";
+artistImg.style.margin = "20px auto 0 auto";
 artistImg.style.backgroundSize = "cover";
 artistImg.style.borderRadius = "50%";
 

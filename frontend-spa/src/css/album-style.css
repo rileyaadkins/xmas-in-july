@@ -46,3 +46,19 @@ nav {
   box-shadow: 0 -2px 2px aliceblue, 0 0 2px aliceblue inset;
   filter: grayscale(0.7);
 }
+
+.album-img {
+  background-image: url(/src/images/MC-cover.png);
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.album-songlist {
+  list-style-type: default !important ;
+}
+
+
+.album ol, .album ul {
+  font-size: 20pt;
+}

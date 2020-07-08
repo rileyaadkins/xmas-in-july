@@ -45,3 +45,7 @@ nav {
   box-shadow: 0 -2px 2px aliceblue, 0 0 2px aliceblue inset;
   filter: grayscale(0.7);
 }
+
+.random-artist h1 {
+  font-size: 50pt;
+}
