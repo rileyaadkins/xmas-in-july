@@ -1,5 +1,5 @@
 .aside {
-  height: 400px;
+  height: auto;
   width: 300px;
   margin-left: 25px;
   padding: 20px;
@@ -26,4 +26,9 @@ main {
 .video iframe {
   width: 560px;
   height: 315px;
+}
+
+.album-art {
+  height: 200px;
+  width: 200px;
 }

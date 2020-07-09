@@ -11,6 +11,18 @@
 }
 
 .aside {
-    background-color: var(--color5-gainsboro);
-    border-radius: 20px;
-  }
+  background-color: var(--color5-gainsboro);
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.album-art {
+    background-image: url(/src/images/MC-cover.png);
+    background-size: 200px 200px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.aside h2 {
+    font-family: "Courgette", cursive;
+}

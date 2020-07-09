@@ -65,3 +65,15 @@ nav li {
 .artist-pic:hover {
   transform: scale(1.1);
 }
+
+.artist-list li {
+  position: relative;
+}
+
+.artist-list li:hover::after {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+}
