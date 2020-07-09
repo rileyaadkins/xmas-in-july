@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+:root {
+  --color1-bottle-green: hsla(154, 73%, 38%, 1);
+  --color2-sizzling-red: rgb(255, 53, 67);
+  --color3-white: hsla(0, 0%, 100%, 1);
+  --color4-dim-gray: hsla(240, 2%, 41%, 1);
+  --color5-gainsboro: hsla(207, 4%, 91%, 1);
+  --color6-rich-black: #050609;
+}
+
+.aside {
+    background-color: var(--color5-gainsboro);
+    border-radius: 20px;
+  }
