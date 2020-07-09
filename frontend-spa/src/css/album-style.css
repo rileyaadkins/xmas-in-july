@@ -55,10 +55,21 @@ nav {
 }
 
 .album-songlist {
-  list-style-type: default !important ;
+  list-style-position: inside;
+  border: 1px solid var(--color6-rich-black);
+}
+.album-songlist li {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.album-songlist li:nth-child(even) {
+  background-color: var(--color5-gainsboro);
+}
+.album-songlist li:nth-child(odd) {
+  background-color: lightgray;
 }
 
-
-.album ol, .album ul {
+.album ol,
+.album ul {
   font-size: 20pt;
 }
