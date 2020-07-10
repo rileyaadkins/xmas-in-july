@@ -1,7 +1,8 @@
-package org.wcci.apimastery.storage.repositories;
+package org.wcci.apimastery.storage;
 
 import org.springframework.stereotype.Service;
 import org.wcci.apimastery.entities.Song;
+import org.wcci.apimastery.storage.repositories.SongRepository;
 
 import java.util.Collection;
 
