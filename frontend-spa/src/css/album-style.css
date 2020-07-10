@@ -57,6 +57,7 @@ nav {
 .album-songlist {
   list-style-position: inside;
   border: 1px solid var(--color6-rich-black);
+  background-color: var(--color5-gainsboro);
 }
 .album-songlist li {
   padding-right: 40px;
@@ -72,4 +73,45 @@ nav {
 .album ol,
 .album ul {
   font-size: 20pt;
+}
+
+.album-songlist li:hover::after {
+  background-color: var(--color2-sizzling-red);
+  content: "X";
+  border-radius: 50%;
+  line-height: 40px;
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 17pt;
+  cursor: pointer;
+  text-align: center;
+}
+
+.album-songlist a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.album-songlist li:hover {
+  font-weight: bolder;
+  background-color: rgba(255, 53, 67,0.4);
+}
+
+.add-song {
+  font-size: 20pt;
+  font-weight: bolder;
+  border-radius: 50%;
+  background-color: var(--color3-white);
+  cursor: pointer;
+
+}
+
+.add-song:hover {
+  box-shadow: 2px 2px 2px var(--color6-rich-black);
+}
+
+.add-song::after {
+  content: " Add Song";
+  position: absolute;
+  margin-left: 15px;
 }

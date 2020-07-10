@@ -74,3 +74,24 @@ nav li {
 .album-songlist {
   text-align: left;
 }
+
+.album-songlist li:hover::after {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  right: 5px;
+  top: 0;
+
+}
+
+.album-songlist li {
+  position: relative;
+}
+
+.add-song {
+  display:inline-block;
+  padding: 1px 10px;
+  margin-top: 2px;
+}
