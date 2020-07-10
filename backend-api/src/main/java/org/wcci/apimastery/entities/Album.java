@@ -13,7 +13,7 @@ public class Album {
     private Artist artist;
     private String albumTitle;
     private String imagePath;
-    @OneToMany (mappedBy = "songAlbum")
+    @OneToMany (mappedBy = "songAlbum", orphanRemoval = true)
     private Collection<Song> songList;
 
     protected Album(){};
