@@ -99,5 +99,11 @@ nav li {
 
 .add-song .form-container {
   position: absolute;
+  display: none;
+}
+
+.add-song:hover .form-container {
+  display: block;
+/* need to fix hover effect. It is not working properly.*/
 }
 

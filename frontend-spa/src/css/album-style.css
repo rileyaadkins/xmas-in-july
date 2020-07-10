@@ -147,4 +147,10 @@ nav {
 
 .add-song #song-duration {
   width: 50px;
+  text-align: center;
+}
+
+.add-song label {
+  font-size: 12pt;
+  margin-right: 10px;
 }
