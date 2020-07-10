@@ -75,7 +75,7 @@ nav li {
   text-align: left;
 }
 
-.album-songlist li:hover::after {
+.album-songlist li:hover .close {
   position: absolute;
   display: block;
   height: 40px;
@@ -93,5 +93,11 @@ nav li {
 .add-song {
   display:inline-block;
   padding: 1px 10px;
-  margin-top: 2px;
+  position: relative;
+  margin: 5px 0 100px -650px;
 }
+
+.add-song .form-container {
+  position: absolute;
+}
+

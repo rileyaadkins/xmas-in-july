@@ -75,9 +75,9 @@ nav {
   font-size: 20pt;
 }
 
-.album-songlist li:hover::after {
+.album-songlist li:hover .close {
   background-color: var(--color2-sizzling-red);
-  content: "X";
+  visibility: visible;
   border-radius: 50%;
   line-height: 40px;
   font-family: "Poppins";
@@ -97,6 +97,11 @@ nav {
   background-color: rgba(255, 53, 67,0.4);
 }
 
+.album-songlist .close {
+  visibility: hidden;
+  display: none;
+}
+
 .add-song {
   font-size: 20pt;
   font-weight: bolder;
@@ -108,10 +113,38 @@ nav {
 
 .add-song:hover {
   box-shadow: 2px 2px 2px var(--color6-rich-black);
+  
 }
 
 .add-song::after {
   content: " Add Song";
   position: absolute;
-  margin-left: 15px;
+  margin-left: 18px;
+  width: 200px;
+  text-align: left;
+}
+
+.add-song:hover::after {
+  text-shadow: 0 -2px 2px aliceblue;
+}
+
+.add-song .form-container {
+  background-color: var(--color5-gainsboro);
+  padding: 5px 20px;
+  margin-top: 10px;
+
+}
+
+.add-song input:first-child {
+  text-indent: 10px;
+  width: 500px;
+}
+
+.add-song button {
+  padding: 2px 25px;
+  margin: 0 50px;
+}
+
+.add-song #song-duration {
+  width: 50px;
 }
