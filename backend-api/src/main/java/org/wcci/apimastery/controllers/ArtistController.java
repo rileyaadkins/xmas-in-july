@@ -1,8 +1,12 @@
 package org.wcci.apimastery.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.entities.Album;
+import org.wcci.apimastery.entities.Artist;
 import org.wcci.apimastery.storage.AlbumStorage;
 import org.wcci.apimastery.storage.ArtistStorage;
+
+import java.util.Collection;
 
 @RestController
 public class ArtistController {
@@ -17,14 +21,33 @@ public class ArtistController {
         this.albumStorage = albumStorage;
     }
 
-    // Getters
-    public ArtistStorage getArtistStorage() {
-        return artistStorage;
-    }
-    public AlbumStorage getAlbumStorage() {
-        return albumStorage;
+    @GetMapping("/api/artists")
+    public Collection<Artist> getAllArtists() {
+        return artistStorage.getAllArtists();
     }
 
+    @GetMapping("/api/artists/{id}")
+    public Artist showSingleArtist(@PathVariable long id) {
+        return artistStorage.retrieveById(id);
+    }
 
-    // Other methods
+    @PostMapping("/api/artists/add")
+    public Artist addArtist(@RequestBody Artist artist) {
+        return artistStorage.save(artist);
+    }
+
+    @DeleteMapping("/api/artists/delete/{id}")
+    public Collection<Artist> deleteArtist(@PathVariable long id) {
+        artistStorage.delete(id);
+        return artistStorage.getAllArtists();
+    }
+
+    @PatchMapping("/api/artists/{artistId}/addAlbum")
+    public Artist addAlbumToArtist(@PathVariable long artistId, @RequestBody Album album) {
+        Artist artist = artistStorage.retrieveById(artistId);
+        Album albumToAdd = new Album(album.getAlbumTitle(), album.getImagePath(), artist);
+        albumStorage.save(albumToAdd);
+        return albumToAdd.getArtist();
+    }
 }
+
