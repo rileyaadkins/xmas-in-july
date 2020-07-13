@@ -85,21 +85,31 @@ main ul li:last-of-type {
   position: relative;
   border-radius: 15px;
   display: none;
+  padding: 10px;
 }
- 
-.add-album input {
+
+.add-album form {
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 10px;
+}
+
+.add-album input {
   text-align: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.add-album input:nth-child(2) {
+  display: inline-block;
 }
 
 .add-album button {
-  position: absolute;
-  top: 60px;
-  left: 10px;
+  /* position: absolute;
+  top: 105px;
+  left: 10px; */
   width: 180px;
-  
 }
 
 .album-list li:last-of-type:hover .add-album {

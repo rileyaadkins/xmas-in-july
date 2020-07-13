@@ -86,3 +86,10 @@ nav {
   background-color: var(--color5-gainsboro);
   cursor: pointer;
 }
+
+.add-album label{
+  font-size: 12pt;
+  display: inline-block;
+  line-height: 12pt;
+  
+}

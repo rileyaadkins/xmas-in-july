@@ -57,6 +57,7 @@ nav {
 .album-songlist {
   list-style-position: inside;
   border: 1px solid var(--color6-rich-black);
+  border-radius: 20px;
   background-color: var(--color5-gainsboro);
 }
 .album-songlist li {
@@ -68,6 +69,16 @@ nav {
 }
 .album-songlist li:nth-child(odd) {
   background-color: lightgray;
+}
+
+.album-songlist li:first-child {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.album-songlist li:last-child {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .album ol,
@@ -94,7 +105,7 @@ nav {
 
 .album-songlist li:hover {
   font-weight: bolder;
-  background-color: rgba(255, 53, 67,0.4);
+  background-color: rgba(255, 53, 67, 0.4);
 }
 
 .album-songlist .close {
@@ -108,17 +119,15 @@ nav {
   border-radius: 50%;
   background-color: var(--color3-white);
   cursor: pointer;
-
 }
 
 .add-song:hover {
   box-shadow: 2px 2px 2px var(--color6-rich-black);
-  
 }
 
 .add-song::after {
   content: " Add Song";
-  
+
   text-align: left;
 }
 
@@ -130,7 +139,7 @@ nav {
   background-color: var(--color5-gainsboro);
   padding: 5px 20px;
   margin-top: 10px;
-
+  border-radius: 20px;
 }
 
 .add-song input:first-child {
