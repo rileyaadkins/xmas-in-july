@@ -1,0 +1,26 @@
+POST http://localhost:8080/api/artists/add
+Content-Type: application/json
+
+{
+  "name": "Test Artist",
+  "imagePath": "asdf",
+  "dob": "05/05/2005",
+  "recordLabel": "Test Label"
+}
+
+###
+GET http://localhost:8080/api/artists
+###
+GET http://localhost:8080/api/artists/1
+###
+DELETE http://localhost:8080/api/artists/2/delete
+###
+PATCH http://localhost:8080/api/artists/1/addAlbum
+Content-Type: application/json
+
+{
+  "albumTitle": "Test Album",
+  "imagePath": "fdsa"
+}
+###
+
