@@ -1,5 +1,7 @@
 package org.wcci.apimastery.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -9,6 +11,8 @@ public class Album {
     @Id
     @GeneratedValue
     private long id;
+//    added annotation
+    @JsonIgnore
     @ManyToOne
     private Artist artist;
     private String albumTitle;
@@ -21,6 +25,8 @@ public class Album {
     public Album(String albumTitle, String imagePath, Artist artist) {
         this.albumTitle = albumTitle;
         this.imagePath = imagePath;
+//        added to constructor
+        this.artist = artist;
     }
 
     public Artist getArtist() {
