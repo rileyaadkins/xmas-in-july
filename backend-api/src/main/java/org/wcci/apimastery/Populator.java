@@ -52,7 +52,16 @@ public class Populator implements CommandLineRunner {
         Song mcMc_8 = new Song( "3:24", "Santa Claus is Coming To Town", xmas1);//        Santa Claus Is Coming To Town - 3:24
         Song mcMc_9 = new Song( "2:59", "Hark! The Herald Angels Sing / Gloria (In Excelsis Deo)", xmas1);//        Hark! The Herald Angels Sing"/"Gloria (In Excelsis Deo) - 2:59
         Song mcMc_10 = new Song( "4:26", "Jesus Oh What a Wonderful Child", xmas1);//        Jesus Oh What a Wonderful Child - 4:26
-
+        songRepo.save(mcMc_1);
+        songRepo.save(mcMc_2);
+        songRepo.save(mcMc_3);
+        songRepo.save(mcMc_4);
+        songRepo.save(mcMc_5);
+        songRepo.save(mcMc_6);
+        songRepo.save(mcMc_7);
+        songRepo.save(mcMc_8);
+        songRepo.save(mcMc_9);
+        songRepo.save(mcMc_10);
 
         /* Merry Christmas II You */
         Song mcMc2_1 = new Song("0", "Santa Claus Is Coming to Town", xmas2);
