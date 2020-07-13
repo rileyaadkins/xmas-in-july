@@ -100,10 +100,18 @@ nav li {
 .add-song .form-container {
   position: absolute;
   display: none;
+  z-index: 100;
 }
 
 .add-song:hover .form-container {
   display: block;
-/* need to fix hover effect. It is not working properly.*/
+
+}
+
+.add-song::after {
+  position: absolute;
+  padding-left: 18px;
+  width: 200px;
+  height: 100px;
 }
 

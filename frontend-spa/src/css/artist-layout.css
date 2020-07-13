@@ -34,6 +34,7 @@ main ul {
 
 main ul li {
   padding: 10px;
+  position: relative;
 }
 
 main ul li:first-of-type {
@@ -50,6 +51,7 @@ main ul li:last-of-type {
   border-radius: 50%;
   transition: all 0.1s;
   background-size: cover;
+  position: relative;
 }
 .album-list li:nth-child(1) div {
   background-image: url(/src/images/MC-cover.png);
@@ -57,16 +59,7 @@ main ul li:last-of-type {
 .album-list li:nth-child(2) div {
   background-image: url(/src/images/merry-christmas-ii-you.png);
 }
-.album-list li:nth-child(3) div {
-  background-image: url(/src/images/Home_for_Christmas_nsync.png);
-}
-.album-list li:nth-child(4) div {
-  background-image: url(/src/images/Christmas-Buble.png);
-}
 
-.album-list li:nth-child(5) div {
-  background-image: url(/src/images/Kidz-Bob-Christmas.png);
-}
 .album-pic:hover {
   transform: scale(1.1);
 }
@@ -78,4 +71,47 @@ main ul li:last-of-type {
   background-size: cover;
   background-image: url(/src/images/MC.jpeg);
   margin: 0 auto;
+}
+
+.album-list li:last-of-type .add-plus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.add-album {
+  height: 100px;
+  position: relative;
+  border-radius: 15px;
+  display: none;
+}
+ 
+.add-album input {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  text-align: center;
+}
+
+.add-album button {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 180px;
+  
+}
+
+.album-list li:last-of-type:hover .add-album {
+  display: block;
+}
+
+.album-list li:hover .close {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  right: -10px;
+  top: -10px;
 }

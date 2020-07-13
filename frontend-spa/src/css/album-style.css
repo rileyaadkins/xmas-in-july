@@ -118,9 +118,7 @@ nav {
 
 .add-song::after {
   content: " Add Song";
-  position: absolute;
-  margin-left: 18px;
-  width: 200px;
+  
   text-align: left;
 }
 

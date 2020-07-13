@@ -64,3 +64,25 @@ nav {
   background-color: red;
   font-size: 30pt;
 }
+
+.album-list li:hover:not(:last-of-type) .close {
+  background-color: var(--color2-sizzling-red);
+  border-radius: 50%;
+  line-height: 40px;
+  font-family: "Poppins";
+  visibility: visible;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 17pt;
+}
+
+.album-list .close {
+  visibility: hidden;
+}
+
+.album-list li:last-of-type div {
+  font-size: 100pt;
+  line-height: 100pt;
+  background-color: var(--color5-gainsboro);
+  cursor: pointer;
+}
