@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+:root {
+  --color1-bottle-green: hsla(154, 73%, 38%, 1);
+  --color2-sizzling-red: rgb(255, 53, 67);
+  --color3-white: hsla(0, 0%, 100%, 1);
+  --color4-dim-gray: hsla(240, 2%, 41%, 1);
+  --color5-gainsboro: hsla(207, 4%, 91%, 1);
+  --color6-rich-black: #050609;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+.container {
+  background-color: var(--color1-bottle-green);
+}
+
+h1 {
+  font-family: "Courgette", cursive;
+}
+
+nav {
+  background-color: var(--color2-sizzling-red);
+}
+
+.album-name {
+  color: var(--color6-rich-black);
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20pt;
+  font-family: "Poppins", sans-serif;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+.album-list li:hover span {
+  font-weight: bolder;
+  text-shadow: 0 -2px 2px aliceblue;
+}
+
+.album-list li:hover div {
+  box-shadow: 0 -2px 2px aliceblue, 0 0 2px aliceblue inset;
+  filter: grayscale(0.7);
+}
+
+.aside {
+  height: 400px;
+  width: 300px;
+  background-color: var(--color5-gainsboro);
+  margin-left: 25px;
+  border-radius: 20px;
+}
+
+.artist-info {
+  font-family: "Poppins", sans-serif;
+}
+
+.album ol, .album ul {
+  background-color: red;
+  font-size: 30pt;
+}
