@@ -43,7 +43,7 @@ public class AlbumController {
         return songToAdd.getSongAlbum();
     }
 
-    @PatchMapping("/api/albums/song/{id}/delete")
+    @DeleteMapping("/api/albums/song/{id}/delete")
     public Album deleteSongFromAlbum(@PathVariable long id){
         Song song = songStorage.findById(id);
         songStorage.delete(id);
