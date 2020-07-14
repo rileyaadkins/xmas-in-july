@@ -46,7 +46,7 @@ nav li {
   transition: all 0.1s;
   background-size: cover;
 }
-.artist-list li:nth-child(1) div {
+/* .artist-list li:nth-child(1) div {
   background-image: url(/src/images/MC.jpeg);
 }
 .artist-list li:nth-child(2) div {
@@ -64,4 +64,4 @@ nav li {
 }
 .artist-pic:hover {
   transform: scale(1.1);
-}
+} */
