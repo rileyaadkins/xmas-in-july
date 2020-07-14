@@ -28,9 +28,9 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/song/3
+GET http://localhost:8080/api/song/8
 
 ###
 GET http://localhost:8080/api/artists
 ###
-DELETE http://localhost:8080/api/song/20
+DELETE http://localhost:8080/api/song/8

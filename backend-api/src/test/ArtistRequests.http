@@ -12,10 +12,10 @@ Content-Type: application/json
 GET http://localhost:8080/api/artists
 
 ###
-GET http://localhost:8080/api/artists/1
+GET http://localhost:8080/api/artists/18
 
 ###
-DELETE http://localhost:8080/api/artists/2
+DELETE http://localhost:8080/api/artists/18
 
 ###
 PATCH http://localhost:8080/api/artists/1/album
