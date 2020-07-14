@@ -31,18 +31,18 @@ public class ArtistController {
         return artistStorage.retrieveById(id);
     }
 
-    @PostMapping("/api/artists/add")
+    @PostMapping("/api/artists")
     public Artist addArtist(@RequestBody Artist artist) {
         return artistStorage.save(artist);
     }
 
-    @DeleteMapping("/api/artists/{id}/delete")
+    @DeleteMapping("/api/artists/{id}")
     public Collection<Artist> deleteArtist(@PathVariable long id) {
         artistStorage.delete(id);
         return artistStorage.getAllArtists();
     }
 
-    @PatchMapping("/api/artists/{artistId}/addAlbum")
+    @PatchMapping("/api/artists/{artistId}/album")
     public Artist addAlbumToArtist(@PathVariable long artistId, @RequestBody Album album) {
         Artist artist = artistStorage.retrieveById(artistId);
         Album albumToAdd = new Album(album.getAlbumTitle(), album.getImagePath(), artist);

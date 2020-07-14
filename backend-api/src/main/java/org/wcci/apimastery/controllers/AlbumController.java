@@ -5,7 +5,6 @@ import org.wcci.apimastery.entities.Album;
 import org.wcci.apimastery.entities.Artist;
 import org.wcci.apimastery.entities.Song;
 import org.wcci.apimastery.storage.AlbumStorage;
-import org.wcci.apimastery.storage.ArtistStorage;
 import org.wcci.apimastery.storage.SongStorage;
 
 import java.util.Collection;
@@ -35,7 +34,7 @@ public class AlbumController {
         return albumStorage.retrieveById(id);
     }
 
-    @PatchMapping("/api/albums/song/{id}/add")
+    @PatchMapping("/api/albums/{id}/song")
     public Album addSongToAlbum(@PathVariable long id, @RequestBody Song song) {
         Album album = albumStorage.retrieveById(id);
         Song songToAdd = new Song(song.getSongLength(), song.getSongName(), album);
@@ -43,14 +42,8 @@ public class AlbumController {
         return songToAdd.getSongAlbum();
     }
 
-    @DeleteMapping("/api/albums/song/{id}/delete")
-    public Album deleteSongFromAlbum(@PathVariable long id){
-        Song song = songStorage.findById(id);
-        songStorage.delete(id);
-        return song.getSongAlbum();
-    }
 
-    @DeleteMapping("/api/albums/{id}/delete")
+    @DeleteMapping("/api/albums/{id}")
     public Artist deleteAlbum(@PathVariable long id) {
         Album album = albumStorage.retrieveById(id);
         albumStorage.delete(id);
