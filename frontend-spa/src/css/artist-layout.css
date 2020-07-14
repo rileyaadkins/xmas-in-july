@@ -81,11 +81,12 @@ main ul li:last-of-type {
 }
 
 .add-album {
-  height: 100px;
+  height: 140px;
   position: relative;
   border-radius: 15px;
   display: none;
   padding: 10px;
+  background-color: var(--color5-gainsboro);
 }
 
 .add-album form {
@@ -97,18 +98,17 @@ main ul li:last-of-type {
 .add-album input {
   text-align: center;
   display: block;
-  margin: 0;
-  padding: 0;
+  width: 180px;
+  margin-bottom: 5px;
 }
 
-.add-album input:nth-child(2) {
+.add-album input:nth-child(3) {
   display: inline-block;
+  width: 80px;
+  margin-left: 20px;
 }
 
 .add-album button {
-  /* position: absolute;
-  top: 105px;
-  left: 10px; */
   width: 180px;
 }
 

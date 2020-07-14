@@ -60,7 +60,8 @@ nav {
   font-family: "Poppins", sans-serif;
 }
 
-.album ol, .album ul {
+.album ol,
+.album ul {
   background-color: red;
   font-size: 30pt;
 }
@@ -80,16 +81,21 @@ nav {
   visibility: hidden;
 }
 
-.album-list li:last-of-type div {
+.album-list li:last-of-type .album-pic {
   font-size: 100pt;
-  line-height: 100pt;
   background-color: var(--color5-gainsboro);
   cursor: pointer;
 }
 
-.add-album label{
+.add-album label {
   font-size: 12pt;
   display: inline-block;
   line-height: 12pt;
-  
+  margin: 0;
+  padding: 0;
+  margin-top: -50px;
+}
+
+.add-album form {
+  height: 200px;
 }
