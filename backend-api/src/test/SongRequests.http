@@ -1,0 +1,36 @@
+### Setup
+POST http://localhost:8080/api/artists
+Content-Type: application/json
+
+{
+  "name": "Test Artist",
+  "imagePath": "asdf",
+  "dob": "05/05/2005",
+  "recordLabel": "Test Label"
+}
+
+### Setup
+PATCH http://localhost:8080/api/artists/1/album
+Content-Type: application/json
+
+{
+  "albumTitle": "Test Album",
+  "imagePath": "fdsa"
+}
+
+###
+PATCH http://localhost:8080/api/albums/2/song
+Content-Type: application/json
+
+{
+  "songLength": "1:30",
+  "songName": "Wuzzle"
+}
+
+###
+GET http://localhost:8080/api/song/8
+
+###
+GET http://localhost:8080/api/artists
+###
+DELETE http://localhost:8080/api/song/8
