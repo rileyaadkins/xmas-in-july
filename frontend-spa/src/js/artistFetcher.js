@@ -86,7 +86,7 @@ const fetchArtists = () => {
         },
       ],
       name: "Wham!",
-      imagePath: "",
+      imagePath: "./src/images/wham!.png",
       dob: "25-June-1963",
       recordLabel: "Innervision",
     },
@@ -101,7 +101,7 @@ const fetchArtists = () => {
         },
       ],
       name: "Michael Bublé",
-      imagePath: "",
+      imagePath: "./src/images/MB.png",
       dob: "09-September-1975",
       recordLabel: "Reprise",
     },
@@ -114,7 +114,7 @@ const fetchSingleArtist = (artistId) => {
       {
         id: 4,
         albumTitle: "Merry Christmas",
-        imagePath: "",
+        imagePath: "./src/images/MC-cover.png",
         songList: [
           {
             id: 8,
@@ -171,7 +171,7 @@ const fetchSingleArtist = (artistId) => {
       {
         id: 5,
         albumTitle: "Merry Christmas II You",
-        imagePath: "",
+        imagePath: "./src/images/merry-christmas-ii-you.png",
         songList: [],
       },
     ],
