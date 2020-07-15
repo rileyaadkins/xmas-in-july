@@ -1,22 +1,22 @@
 export { createAllArtistsSection };
-import { createSingleArtistSection } from "/singleArtistSection.js"
-import { fetchSingleArtist } from "/artistFetcher.js"
+import { createSingleArtistSection } from "./singleArtistSection.js";
+import { fetchSingleArtist } from "../artistFetcher.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
   mainSection.innerHTML = `<h1>Artists</h1>`;
-  
+
   const artistsUl = document.createElement("ul");
   artistsUl.classList.add("artist-list");
-  
+
   allArtists.forEach((artist) => {
     const artistLi = document.createElement("li");
     artistLi.innerHTML = `
     <span class="close">X</span>
     <div class="artist-pic" style="background-image: url(${artist.imagePath})"></div>
     <span class="artist-name">${artist.name}</span>`;
-    artistLi.addEventListener("click", ()=> {
-      renderSingleArtist(mainSection, artist.id)
+    artistLi.addEventListener("click", () => {
+      renderSingleArtist(mainSection, artist.id);
     });
     artistsUl.appendChild(artistLi);
   });
@@ -39,11 +39,11 @@ const createAllArtistsSection = (allArtists) => {
   return mainSection;
 };
 
-const renderSingleArtist = (element, artistId)=> {
+const renderSingleArtist = (element, artistId) => {
   while (element.firstChild) {
     element.firstChild.remove();
   }
 
   const artist = fetchSingleArtist(artistId);
-  createSingleArtistSection(artist, element)
+  createSingleArtistSection(artist, element);
 };
