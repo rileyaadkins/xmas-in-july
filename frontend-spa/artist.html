@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/css/artist-layout.css" />
-    <link rel="stylesheet" href="./src/css/artist-style.css" />
-    <link rel="stylesheet" href="./src/css/nav.css" />
-    <title>Artist</title>
-  </head>
-  <body class="container">
-    <div class="container">
-      <header>
-        <h1>
-          Ali's Page <br />
-          <div class="header-image" ></div>          <!-- <img src="/images/clipart2.png" width="100px" height="100px" /> -->
-          <!-- <img src="/images/clipart2.png" width="100px" height="100px" /> -->
-        </h1>
-        <nav>
-          <ul class="nav-list">
-            <li>
-              <a href="home.html">Home</a>
-            </li>
-            <li>
-              <a href="./artists.html">Artists</a>
-            </li>
-            <li>
-              <a href="./albums.html">Albums</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <aside class="aside">
-          <h1>Mariah Carey</h1>
-          <div class="artist-pic"></div>
-          <span class="artist-birthday">27 March 1969 / 70</span>
-        </aside>
-        <div class="anything">
-          <h1>Albums</h1>
-          <ul class="album-list">
-            <li>
-              <div class="album-pic"></div>
-              <span class="album-name">Merry Christmas</span>
-            </li>
-            <li>
-              <div class="album-pic"></div>
-              <span class="album-name">Merry Christmas II You</span>
-            </li>
-          </ul>
-        </div>
-      </main>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/artist-layout.css" />
+  <link rel="stylesheet" href="./src/css/artist-style.css" />
+  <link rel="stylesheet" href="./src/css/nav.css" />
+  <title>Artist</title>
+</head>
+
+<body class="container">
+  <div class="container">
+    <header>
+      <h1>
+        Ali's Page <br />
+        <div class="header-image"></div> <!-- <img src="/images/clipart2.png" width="100px" height="100px" /> -->
+        <!-- <img src="/images/clipart2.png" width="100px" height="100px" /> -->
+      </h1>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a href="./artists.html">Artists</a>
+          </li>
+          <li>
+            <a href="./albums.html">Albums</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside class="aside">
+        <h1>Mariah Carey</h1>
+        <div class="artist-pic"></div>
+        <span class="artist-birthday">27 March 1969 / 70</span>
+      </aside>
+      <div class="anything">
+        <h1>Albums</h1>
+        <ul class="album-list">
+          <li>
+            <span class="close">X</span>
+            <div class="album-pic"></div>
+            <span class="album-name">Merry Christmas</span>
+          </li>
+          <li>
+            <span class="close">X</span>
+            <div class="album-pic"></div>
+            <span class="album-name">Merry Christmas II You</span>
+          </li>
+          <li>
+            <span class="close">X</span>
+            <div class="album-pic"><span class="add-plus">+</span></div>
+            <span class="album-name">Add Album</span>
+            <div class="add-album">
+              <form action="">
+                <input class="test" type="text" name="album-name" id="album-name" placeholder="Album Name" required />
+                <label for="record-year">Year: </label>
+                <input type="number" name="record-year" id="record-year" placeholder="YYYY" max="2020" maxlength="4"
+                  minlength="4" min="1900" required />
+                <input type="text" name="record-label" id="record-label" placeholder="Record Label" required />
+                <button>Submit</button>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>

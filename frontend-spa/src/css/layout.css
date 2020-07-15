@@ -65,3 +65,62 @@ nav li {
 .artist-pic:hover {
   transform: scale(1.1);
 }
+
+.artist-list li {
+  position: relative;
+}
+
+.artist-list li:hover .close {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  z-index: 100;
+  right: -10px;
+  top: -10px;
+}
+
+.artist-list li:last-of-type .plus-sign {
+  position: relative;
+  
+}
+
+.artist-list li:last-of-type .add-plus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.artist-list .plus-sign {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.add-artist {
+  height: 100px;
+  position: relative;
+  border-radius: 15px;
+  display: none;
+}
+ 
+.add-artist input {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  width: 180px;
+  text-align: center;
+}
+
+.add-artist button {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 180px;
+  
+}
+
+.artist-list li:last-of-type:hover .add-artist {
+  display: block;
+}
