@@ -1,7 +1,6 @@
 export { createSingleArtistSection };
 
-const createSingleArtistSection = (singleArtist) => {
-  const mainSection = document.createElement("main");
+const createSingleArtistSection = (singleArtist, mainSection) => {
   const aside = document.createElement("aside");
   aside.classList.add("aside");
   aside.innerHTML = `
@@ -10,6 +9,7 @@ const createSingleArtistSection = (singleArtist) => {
           <span class="artist-birthday">${singleArtist.dob}</span>
     `;
   mainSection.prepend(aside);
+
   const albumDiv = document.createElement("div");
   albumDiv.classList.add("anything");
   albumDiv.innerHTML = "<h1>Albums</h1>";
