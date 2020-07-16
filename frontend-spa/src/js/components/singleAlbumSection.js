@@ -2,7 +2,7 @@ export { createSingleAlbumSection };
 
 const createSingleAlbumSection = (singleAlbum, mainSection) => {
   const section = document.createElement("section");
-  section.classList.add("section");
+  section.classList.add("album");
   section.innerHTML = `  <h1>${singleAlbum.albumTitle}</h1>
     <div class="album-img" style="background-image: url(${singleAlbum.imagePath})"></div>
     <ul>
@@ -31,9 +31,9 @@ const createSingleAlbumSection = (singleAlbum, mainSection) => {
     <input type="text" name="song-duration" id="song-duration" placeholder="0:00" required />
   <button>Submit</button>
   </form>
-  </div>`
+  </div>`;
   songListDiv.appendChild(songListOl);
   songListDiv.appendChild(addSongForm);
-  mainSection.appendChild(songListDiv);
+  section.appendChild(songListDiv);
   return mainSection;
 };
