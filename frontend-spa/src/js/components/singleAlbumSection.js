@@ -18,11 +18,22 @@ const createSingleAlbumSection = (singleAlbum, mainSection) => {
   songListOl.classList.add("album-songlist");
   singleAlbum.songList.forEach((song) => {
     const songLi = document.createElement("li");
-    songLi.innerHTML = `${song.songName}`;
+    songLi.innerHTML = `<span class="close">X</span> ${song.songName}`;
     songListOl.appendChild(songLi);
   });
-
+  const addSongForm = document.createElement("div");
+  addSongForm.classList.add("add-song");
+  addSongForm.innerHTML = `+ 
+  <div class="form-container">
+  <form>
+    <input type="text" name="song-name" id="song-name" placeholder="Song Name" required />
+    <label for="song-duration">Duration: </label>
+    <input type="text" name="song-duration" id="song-duration" placeholder="0:00" required />
+  <button>Submit</button>
+  </form>
+  </div>`
   songListDiv.appendChild(songListOl);
+  songListDiv.appendChild(addSongForm);
   mainSection.appendChild(songListDiv);
   return mainSection;
 };

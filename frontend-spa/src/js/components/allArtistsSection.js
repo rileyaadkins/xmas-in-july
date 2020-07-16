@@ -17,11 +17,8 @@ const createAllArtistsSection = (allArtists) => {
     <span class="artist-name">${artist.name}</span>`;
     artistLi.addEventListener("click", () => {
       renderSingleArtist(mainSection, artist.id);
-      
     });
     artistsUl.appendChild(artistLi);
-
-
   });
 
   const addArtistLi = document.createElement("li");
@@ -37,7 +34,7 @@ const createAllArtistsSection = (allArtists) => {
   `;
 
   artistsUl.appendChild(addArtistLi);
-
+  
   mainSection.appendChild(artistsUl);
   return mainSection;
 };
@@ -47,19 +44,21 @@ const renderSingleArtist = (element, artistId) => {
     element.firstChild.remove();
   }
 
-  const link = document.createElement('link');  
-  
-        link.rel = "stylesheet";  
-        link.type = "text/css"; 
-        link.href = "./src/css/artist-layout.css";  
-   document.getElementsByTagName('HEAD')[0].appendChild(link);
+  const link = document.createElement("link");
 
-   const link2 = document.createElement('link');  
-  
-        link2.rel = "stylesheet";  
-        link2.type = "text/css"; 
-        link2.href = "./src/css/artist-style.css";  
-   document.getElementsByTagName('HEAD')[0].appendChild(link2);
+  link.rel = "stylesheet";
+  link.type = "text/css";
+  link.href = "./src/css/artist-layout.css";
+  link.id = "artist-layout";
+  document.getElementsByTagName("HEAD")[0].appendChild(link);
+
+  const link2 = document.createElement("link");
+
+  link2.rel = "stylesheet";
+  link2.type = "text/css";
+  link2.href = "./src/css/artist-style.css";
+  link2.id = "artist-style";
+  document.getElementsByTagName("HEAD")[0].appendChild(link2);
 
   const artist = fetchSingleArtist(artistId);
   createSingleArtistSection(artist, element);
