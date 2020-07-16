@@ -1,7 +1,6 @@
 export { createSingleAlbumSection };
 
-const createSingleAlbumSection = (singleAlbum) => {
-  const mainSection = document.createElement("main");
+const createSingleAlbumSection = (singleAlbum, mainSection) => {
   const section = document.createElement("section");
   section.classList.add("section");
   section.innerHTML = `  <h1>${singleAlbum.albumTitle}</h1>

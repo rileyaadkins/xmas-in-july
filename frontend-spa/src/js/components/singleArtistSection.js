@@ -1,4 +1,7 @@
 export { createSingleArtistSection };
+import { createSingleAlbumSection } from "./singleAlbumSection.js";
+import { fetchSingleAlbum } from "../artistFetcher.js";
+
 
 const createSingleArtistSection = (singleArtist, mainSection) => {
   const aside = document.createElement("aside");
@@ -21,8 +24,34 @@ const createSingleArtistSection = (singleArtist, mainSection) => {
     albumLi.innerHTML = `
         <div class="album-pic" style="background-image: url(${album.imagePath})"></div>
         <span class="album-name">${album.albumTitle}</span>`;
+    albumLi.addEventListener("click", () => {
+      renderSingleAlbum(mainSection, album.id);
+    })    
     albumUl.appendChild(albumLi);
   });
   mainSection.appendChild(albumDiv);
   return mainSection;
+};
+
+const renderSingleAlbum = (element, albumId) => {
+  while (element.firstChild) {
+    element.firstChild.remove();
+  }
+
+  const link = document.createElement('link');  
+  
+        link.rel = "stylesheet";  
+        link.type = "text/css"; 
+        link.href = "./src/css/album-layout.css";  
+   document.getElementsByTagName('HEAD')[0].appendChild(link);
+
+   const link2 = document.createElement('link');  
+  
+        link2.rel = "stylesheet";  
+        link2.type = "text/css"; 
+        link2.href = "./src/css/album-style.css";  
+   document.getElementsByTagName('HEAD')[0].appendChild(link2);
+
+  const album = fetchSingleAlbum(albumId);
+  createSingleAlbumSection(album, element);
 };
