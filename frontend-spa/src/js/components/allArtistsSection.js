@@ -34,7 +34,7 @@ const createAllArtistsSection = (allArtists) => {
   `;
 
   artistsUl.appendChild(addArtistLi);
-  
+
   mainSection.appendChild(artistsUl);
   return mainSection;
 };
@@ -59,7 +59,8 @@ const renderSingleArtist = (element, artistId) => {
   link2.href = "./src/css/artist-style.css";
   link2.id = "artist-style";
   document.getElementsByTagName("HEAD")[0].appendChild(link2);
-
-  
-  createSingleArtistSection(artistId, element);
+  fetchSingleArtist(artistId).then((artist) => {
+    console.log(artist);
+    createSingleArtistSection(artist, element);
+  });
 };

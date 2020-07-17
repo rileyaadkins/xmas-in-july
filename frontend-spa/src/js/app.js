@@ -13,5 +13,7 @@ const renderPage = (allArtists) => {
   container.appendChild(createFooter());
 };
 
-const allArtists = fetchArtists();
-renderPage(allArtists);
+fetchArtists().then((artists) => {
+  console.log(artists);
+  renderPage(artists);
+});

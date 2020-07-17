@@ -1,9 +1,8 @@
 export { createSingleArtistSection };
 import { createSingleAlbumSection } from "./singleAlbumSection.js";
-import { fetchSingleArtist } from "../apiHelper.js";
+import { fetchSingleAlbum } from "../apiHelper.js";
 
-const createSingleArtistSection = (artistId, mainSection) => {
-  const singleArtist = fetchSingleArtist(artistId);
+const createSingleArtistSection = (singleArtist, mainSection) => {
   const aside = document.createElement("aside");
   aside.classList.add("aside");
   aside.innerHTML = `
@@ -96,7 +95,8 @@ const renderSingleAlbum = (element, albumId) => {
   link2.href = "./src/css/album-style.css";
   document.getElementsByTagName("HEAD")[0].appendChild(link2);
   document.getElementById("artist-style").disabled = true;
-
-  
-  createSingleAlbumSection(albumId, element);
+  fetchSingleAlbum(albumId).then((album) => {
+    console.log(album);
+    createSingleAlbumSection(album, element);
+  });
 };

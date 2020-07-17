@@ -53,12 +53,6 @@ main ul li:last-of-type {
   background-size: cover;
   position: relative;
 }
-.album-list li:nth-child(1) div {
-  background-image: url(/src/images/MC-cover.png);
-}
-.album-list li:nth-child(2) div {
-  background-image: url(/src/images/merry-christmas-ii-you.png);
-}
 
 .album-pic:hover {
   transform: scale(1.1);

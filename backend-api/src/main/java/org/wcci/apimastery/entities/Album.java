@@ -14,6 +14,7 @@ public class Album {
     @JsonIgnore
     @ManyToOne
     private Artist artist;
+    private String releaseYear;
     private String albumTitle;
     private String imagePath;
     @OneToMany(mappedBy = "songAlbum", orphanRemoval = true)
@@ -24,10 +25,11 @@ public class Album {
 
     ;
 
-    public Album(String albumTitle, String imagePath, Artist artist) {
+    public Album(String albumTitle, String imagePath, Artist artist, String releaseYear) {
         this.albumTitle = albumTitle;
         this.imagePath = imagePath;
         this.artist = artist;
+        this.releaseYear = releaseYear;
     }
 
     public Artist getArtist() {
@@ -50,5 +52,8 @@ public class Album {
         return songList;
     }
 
+    public String getReleaseYear() {
+        return releaseYear;
+    }
 }
 

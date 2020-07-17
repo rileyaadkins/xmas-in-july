@@ -19,7 +19,6 @@ a:visited {
 }
 .container {
   /* background-color: var(--color1-bottle-green); */
-  
 }
 
 h1 {
@@ -49,7 +48,6 @@ nav {
 }
 
 .album-img {
-  background-image: url(/src/images/MC-cover.png);
   width: 300px;
   height: 300px;
   margin: 0 auto;
@@ -86,8 +84,6 @@ nav {
 .album ul {
   font-size: 20pt;
 }
-
-
 
 .album-songlist li:hover .close {
   background-color: var(--color2-sizzling-red);
