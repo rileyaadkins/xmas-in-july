@@ -1,6 +1,6 @@
 export { createAllArtistsSection };
 import { createSingleArtistSection } from "./singleArtistSection.js";
-import { fetchSingleArtist } from "../artistFetcher.js";
+import { fetchSingleArtist } from "../apiHelper.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
@@ -60,6 +60,6 @@ const renderSingleArtist = (element, artistId) => {
   link2.id = "artist-style";
   document.getElementsByTagName("HEAD")[0].appendChild(link2);
 
-  const artist = fetchSingleArtist(artistId);
-  createSingleArtistSection(artist, element);
+  
+  createSingleArtistSection(artistId, element);
 };

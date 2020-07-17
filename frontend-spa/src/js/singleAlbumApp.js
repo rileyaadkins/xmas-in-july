@@ -1,6 +1,6 @@
 import { createFooter } from "./components/footer.js";
 import { createHeader } from "./components/header.js";
-import { fetchSingleAlbum } from "./artistFetcher.js";
+import { fetchSingleAlbum } from "./apiHelper.js";
 import { createSingleAlbumSection } from "./components/singleAlbumSection.js";
 
 const renderPage = (singleAlbum) => {

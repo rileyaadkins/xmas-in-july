@@ -1,8 +1,9 @@
 export { createSingleArtistSection };
 import { createSingleAlbumSection } from "./singleAlbumSection.js";
-import { fetchSingleAlbum } from "../artistFetcher.js";
+import { fetchSingleArtist } from "../apiHelper.js";
 
-const createSingleArtistSection = (singleArtist, mainSection) => {
+const createSingleArtistSection = (artistId, mainSection) => {
+  const singleArtist = fetchSingleArtist(artistId);
   const aside = document.createElement("aside");
   aside.classList.add("aside");
   aside.innerHTML = `
@@ -96,6 +97,6 @@ const renderSingleAlbum = (element, albumId) => {
   document.getElementsByTagName("HEAD")[0].appendChild(link2);
   document.getElementById("artist-style").disabled = true;
 
-  const album = fetchSingleAlbum(albumId);
-  createSingleAlbumSection(album, element);
+  
+  createSingleAlbumSection(albumId, element);
 };
