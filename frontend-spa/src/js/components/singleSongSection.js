@@ -1,4 +1,8 @@
-import { fetchSingleSong, fetchSongAlbum, fetchSongArtist } from "../apiHelper.js";
+import {
+  fetchSingleSong,
+  fetchSongAlbum,
+  fetchSongArtist,
+} from "../apiHelper.js";
 
 export { createSingleSongSection };
 
@@ -9,7 +13,7 @@ const createSingleSongSection = (songId, mainSection) => {
   const aside = document.createElement("aside");
   aside.classList.add("aside");
   aside.innerHTML = ` <h2>${album.albumTitle}</h2>
-    <div class="album-art" style="background-image: url(${album.imagePath})></div>
+    <div class="album-art" style="background-image: url(${album.imagePath})"></div>
     <h3>${artist.name}</h3>
     <span>${song.songName}</span>
     <span>${song.songLength}</span>`;
