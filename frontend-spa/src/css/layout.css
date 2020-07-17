@@ -46,7 +46,7 @@ nav li {
   transition: all 0.1s;
   background-size: cover;
 }
-.artist-list li:nth-child(1) div {
+/* .artist-list li:nth-child(1) div {
   background-image: url(/src/images/MC.jpeg);
 }
 .artist-list li:nth-child(2) div {
@@ -61,7 +61,7 @@ nav li {
 
 .artist-list li:nth-child(5) div {
   background-image: url(/src/images/kidsbop.png);
-}
+}*/
 .artist-pic:hover {
   transform: scale(1.1);
 }
@@ -82,7 +82,6 @@ nav li {
 
 .artist-list li:last-of-type .plus-sign {
   position: relative;
-  
 }
 
 .artist-list li:last-of-type .add-plus {
@@ -104,7 +103,7 @@ nav li {
   border-radius: 15px;
   display: none;
 }
- 
+
 .add-artist input {
   position: absolute;
   top: 15px;
@@ -118,7 +117,6 @@ nav li {
   top: 60px;
   left: 10px;
   width: 180px;
-  
 }
 
 .artist-list li:last-of-type:hover .add-artist {

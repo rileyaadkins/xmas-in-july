@@ -1,17 +1,17 @@
 import { fetchArtists, fetchSingleArtist } from "./apiHelper.js";
 import { createFooter } from "./components/footer.js";
 import { createHeader } from "./components/header.js";
-import { createAllArtistsSection } from "./components/allArtistsSection.js";
+import { createSingleArtistSection } from "./components/singleArtistSection.js";
 
-const renderPage = (allArtists) => {
+const renderPage = (singleArtist) => {
   const container = document.querySelector(".container");
   while (container.firstChild) {
     container.firstChild.remove();
   }
   container.prepend(createHeader());
-  container.appendChild(createAllArtistsSection(allArtists));
+  container.appendChild(createSingleArtistSection(singleArtist));
   container.appendChild(createFooter());
 };
 
-const allArtists = fetchArtists();
-renderPage(allArtists);
+const singleArtist = fetchSingleArtist(1);
+renderPage(singleArtist);
