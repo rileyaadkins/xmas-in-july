@@ -50,7 +50,6 @@ nav {
   font-size: 50pt;
 }
 
-
 .artist-list li:hover:not(:last-of-type) .close {
   background-color: var(--color2-sizzling-red);
   border-radius: 50%;
@@ -66,9 +65,13 @@ nav {
   visibility: hidden;
 }
 
-.artist-list li:last-of-type div {
+.artist-list li:last-of-type .plus-sign {
   font-size: 100pt;
   line-height: 100pt;
   background-color: var(--color5-gainsboro);
   cursor: pointer;
+}
+
+.artist-list .add-artist {
+  background-color: var(--color5-gainsboro);
 }

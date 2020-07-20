@@ -23,18 +23,18 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // Artists
-        Artist mCarey = new Artist("Mariah Carey", "./src/images/MC.jpeg", "07-March-1970", "Columbia");
-        Artist wham = new Artist("Wham!", "./src/images/wham!.png", "25-June-1963", "Innervision");
-        Artist mBuble = new Artist("Michael Bublé", "./src/images/MB.png", "09-September-1975", "Reprise");
+        Artist mCarey = new Artist("Mariah Carey", "./src/images/MC.jpeg", "07-March-1970");
+        Artist wham = new Artist("Wham!", "./src/images/wham!.png", "25-June-1963");
+        Artist mBuble = new Artist("Michael Bublé", "./src/images/MB.png", "09-September-1975");
         artistRepo.save(mCarey);
         artistRepo.save(wham);
         artistRepo.save(mBuble);
 
         // Albums
-        Album xmas1 = new Album("Merry Christmas", "./src/images/MC-cover.png", mCarey, "1994");
-        Album xmas2 = new Album("Merry Christmas II You", "./src/images/merry-christmas-ii-you.png", mCarey, "2010");
-        Album lastXmas = new Album("Last Christmas", "./src/images/Last-Christmas-Wham.png", wham, "1984");
-        Album xmas3 = new Album("Christmas", "./src/images/Christmas-Buble.png", mBuble, "2011");
+        Album xmas1 = new Album("Merry Christmas", "./src/images/MC-cover.png", mCarey, "1994", "Columbia");
+        Album xmas2 = new Album("Merry Christmas II You", "./src/images/merry-christmas-ii-you.png", mCarey, "2010", "Columbia");
+        Album lastXmas = new Album("Last Christmas", "./src/images/Last-Christmas-Wham.png", wham, "1984", "Innervision");
+        Album xmas3 = new Album("Christmas", "./src/images/Christmas-Buble.png", mBuble, "2011", "Reprise");
         albumRepo.save(xmas1);
         albumRepo.save(xmas2);
         albumRepo.save(lastXmas);

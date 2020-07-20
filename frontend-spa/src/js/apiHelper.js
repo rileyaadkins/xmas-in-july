@@ -6,6 +6,8 @@ export {
   fetchAlbumArtist,
   fetchSongAlbum,
   fetchSongArtist,
+  postNewArtist,
+  postNewAlbum,
 };
 
 const fetchArtists = async () => {
@@ -50,11 +52,21 @@ const fetchSongArtist = (songId) => {
 };
 
 const postNewArtist = async (artist) => {
-  return fetch(
-    `http://localhost:8080/api/artists`, {
-     method: "POST", 
-     headers:{
-       "Content-Type"
-     }    }
-  )
+  return fetch(`http://localhost:8080/api/artists`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(artist),
+  }).then((response) => response.json());
+};
+
+const postNewAlbum = async (artistId, album) => {
+  return fetch(`http://localhost:8080/api/artists/${artistId}/album`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(album),
+  }).then((response) => response.json());
 };

@@ -15,7 +15,7 @@ const createSingleAlbumSection = (singleAlbum, mainSection) => {
     <ul>
       <li>Artist: <span>${albumArtist.name}</span></li>
       <li>Release year: <span>${singleAlbum.releaseYear}</span></li>
-      <li>Record label: <span>${albumArtist.recordLabel}</span></li>
+      <li>Record label: <span>${singleAlbum.recordLabel}</span></li>
     </ul>`;
     mainSection.prepend(section);
     const songListDiv = document.createElement("div");

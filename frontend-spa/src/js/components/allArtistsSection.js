@@ -1,6 +1,6 @@
-export { createAllArtistsSection };
+export { createAllArtistsSection, renderSingleArtist };
 import { createSingleArtistSection } from "./singleArtistSection.js";
-import { fetchSingleArtist } from "../apiHelper.js";
+import { fetchSingleArtist, postNewArtist } from "../apiHelper.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
@@ -38,30 +38,26 @@ const createAllArtistsSection = (allArtists) => {
   dobInput.placeholder = "Date of Birth";
   dobInput.required;
   artistForm.append(dobInput);
-  const recordLabel = document.createElement("input");
-  recordLabel.type = "text";
-  recordLabel.placeholder = "Record Label";
-  recordLabel.required;
-  artistForm.append(recordLabel);
+
   const artistImage = document.createElement("input");
   artistImage.type = "text";
   artistImage.placeholder = "Artist Image";
   artistImage.required;
   artistForm.append(artistImage);
   const submitButton = document.createElement("button");
-  submitButton.innerText = ("submit");
+  submitButton.innerText = "submit";
   artistForm.appendChild(submitButton);
   submitButton.addEventListener("click", () => {
     const artist = {
-      name: nameInput.value, 
+      name: nameInput.value,
       imagePath: artistImage.value,
-      dob: dobInput.value, 
-      recordLabel: recordLabel.value, 
-    }
-    postNewArtist(artist).then((artist) =>{
-      renderSingleArtist(mainSection, artist.id)
-    })
-  })
+      dob: dobInput.value,
+    };
+    postNewArtist(artist).then((artist) => {
+      renderSingleArtist(mainSection, artist.id);
+    });
+  });
+  addArtistLi.appendChild(artistForm);
   artistsUl.appendChild(addArtistLi);
 
   mainSection.appendChild(artistsUl);

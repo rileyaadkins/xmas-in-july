@@ -1,6 +1,7 @@
 export { createSingleArtistSection };
 import { createSingleAlbumSection } from "./singleAlbumSection.js";
-import { fetchSingleAlbum } from "../apiHelper.js";
+import { fetchSingleAlbum, postNewAlbum } from "../apiHelper.js";
+import { renderSingleArtist } from "./allArtistsSection.js";
 
 const createSingleArtistSection = (singleArtist, mainSection) => {
   const aside = document.createElement("aside");
@@ -35,40 +36,63 @@ const createSingleArtistSection = (singleArtist, mainSection) => {
     <div class="album-pic">
       <span class="add-plus">+</span>
     </div>
-    <span class="album-name">Add Album</span>
-    <div class="add-album">
-      <form action="">
-        <input
-          class="test"
-          type="text"
-          name="album-name"
-          id="album-name"
-          placeholder="Album Name"
-          required
-        />
-        <label for="record-year">Year: </label>
-        <input
-          type="number"
-          name="record-year"
-          id="record-year"
-          placeholder="YYYY"
-          max="2020"
-          maxlength="4"
-          minlength="4"
-          min="1900"
-          required
-        />
-        <input
-          type="text"
-          name="record-label"
-          id="record-label"
-          placeholder="Record Label"
-          required
-        />
-        <button>Submit</button>
-      </form>
-    </div>`;
+    <span class="album-name">Add Album</span>`;
 
+  const addAlbumForm = document.createElement("div");
+  addAlbumForm.classList.add("add-album");
+
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.placeholder = "Album Name";
+  nameInput.required;
+
+  const releaseYear = document.createElement("input");
+  releaseYear.type = "number";
+  releaseYear.id = "record-year";
+  releaseYear.placeholder = "YYYY";
+  releaseYear.max = "2020";
+  releaseYear.maxLength = "4";
+  releaseYear.minLength = "4";
+  releaseYear.min = "1900";
+  releaseYear.required;
+
+  const release_year_label = document.createElement("label");
+  release_year_label.for = "record-year";
+  release_year_label.innerText = "Year: ";
+
+  const recordLabel = document.createElement("input");
+  recordLabel.type = "text";
+  recordLabel.placeholder = "Record Label";
+  recordLabel.required;
+
+  const albumImage = document.createElement("input");
+  albumImage.type = "text";
+  albumImage.placeholder = "Album Cover Image";
+  albumImage.required;
+
+  const submitButton = document.createElement("button");
+  submitButton.innerText = "submit";
+
+  submitButton.addEventListener("click", () => {
+    const album = {
+      releaseYear: releaseYear.value,
+      albumTitle: nameInput.value,
+      imagePath: albumImage.value,
+      recordLabel: recordLabel.value,
+    };
+    postNewAlbum(singleArtist.id, album).then((artist) => {
+      renderSingleArtist(mainSection, artist.id);
+    });
+  });
+  addAlbumForm.append(
+    nameInput,
+    release_year_label,
+    releaseYear,
+    recordLabel,
+    albumImage,
+    submitButton
+  );
+  addAlbumLi.append(addAlbumForm);
   mainSection.appendChild(albumDiv);
   albumUl.appendChild(addAlbumLi);
   return mainSection;
