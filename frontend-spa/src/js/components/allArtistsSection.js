@@ -25,14 +25,43 @@ const createAllArtistsSection = (allArtists) => {
   addArtistLi.innerHTML = `
   <span class="close">X</span>
   <div class="plus-sign"><span class="add-plus">+</span></div>
-  <span class="artist-name">Add Artist</span>
-  <div class="add-artist">
-   <form action="">
-   <input type="text" name="artist-name" id="artist-name" placeholder="Artist Name" required />
-   <button>Submit</button>
-  </form></div>
-  `;
-
+  <span class="artist-name">Add Artist</span> `;
+  const artistForm = document.createElement("div");
+  artistForm.classList.add("add-artist");
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.placeholder = "Artist Name";
+  nameInput.required;
+  artistForm.append(nameInput);
+  const dobInput = document.createElement("input");
+  dobInput.type = "text";
+  dobInput.placeholder = "Date of Birth";
+  dobInput.required;
+  artistForm.append(dobInput);
+  const recordLabel = document.createElement("input");
+  recordLabel.type = "text";
+  recordLabel.placeholder = "Record Label";
+  recordLabel.required;
+  artistForm.append(recordLabel);
+  const artistImage = document.createElement("input");
+  artistImage.type = "text";
+  artistImage.placeholder = "Artist Image";
+  artistImage.required;
+  artistForm.append(artistImage);
+  const submitButton = document.createElement("button");
+  submitButton.innerText = ("submit");
+  artistForm.appendChild(submitButton);
+  submitButton.addEventListener("click", () => {
+    const artist = {
+      name: nameInput.value, 
+      imagePath: artistImage.value,
+      dob: dobInput.value, 
+      recordLabel: recordLabel.value, 
+    }
+    postNewArtist(artist).then((artist) =>{
+      renderSingleArtist(mainSection, artist.id)
+    })
+  })
   artistsUl.appendChild(addArtistLi);
 
   mainSection.appendChild(artistsUl);

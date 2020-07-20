@@ -48,3 +48,13 @@ const fetchSongArtist = (songId) => {
     `http://localhost:8080/api/song/${songId}/artist`
   ).then((response) => response.json());
 };
+
+const postNewArtist = async (artist) => {
+  return fetch(
+    `http://localhost:8080/api/artists`, {
+     method: "POST", 
+     headers:{
+       "Content-Type"
+     }    }
+  )
+};
