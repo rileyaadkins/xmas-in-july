@@ -69,21 +69,9 @@ const renderSingleArtist = (element, artistId) => {
     element.firstChild.remove();
   }
 
-  const link = document.createElement("link");
+  document.getElementById("artist-layout").disabled = false;
+  document.getElementById("artist-style").disabled = false;
 
-  link.rel = "stylesheet";
-  link.type = "text/css";
-  link.href = "./src/css/artist-layout.css";
-  link.id = "artist-layout";
-  document.getElementsByTagName("HEAD")[0].appendChild(link);
-
-  const link2 = document.createElement("link");
-
-  link2.rel = "stylesheet";
-  link2.type = "text/css";
-  link2.href = "./src/css/artist-style.css";
-  link2.id = "artist-style";
-  document.getElementsByTagName("HEAD")[0].appendChild(link2);
   fetchSingleArtist(artistId).then((artist) => {
     console.log(artist);
     createSingleArtistSection(artist, element);

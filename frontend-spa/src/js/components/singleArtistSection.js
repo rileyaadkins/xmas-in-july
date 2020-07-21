@@ -1,6 +1,6 @@
-export { createSingleArtistSection };
+export { createSingleArtistSection, renderSingleAlbum };
 import { createSingleAlbumSection } from "./singleAlbumSection.js";
-import { fetchSingleAlbum, postNewAlbum } from "../apiHelper.js";
+import { fetchSingleAlbum, postNewAlbum, deleteAlbum } from "../apiHelper.js";
 import { renderSingleArtist } from "./allArtistsSection.js";
 
 const createSingleArtistSection = (singleArtist, mainSection) => {
@@ -23,9 +23,21 @@ const createSingleArtistSection = (singleArtist, mainSection) => {
   singleArtist.albums.forEach((album) => {
     const albumLi = document.createElement("li");
     albumLi.innerHTML = `
-    <span class="close">X</span>
-        <div class="album-pic" style="background-image: url(${album.imagePath})"></div>
-        <span class="album-name">${album.albumTitle}</span>`;
+    <div class="album-pic" style="background-image: url(${album.imagePath})"></div>
+    <span class="album-name">${album.albumTitle}</span>`;
+
+    const closeButton = document.createElement("span");
+    closeButton.classList.add("close");
+    closeButton.innerText = "X";
+
+    albumLi.prepend(closeButton);
+
+    closeButton.addEventListener("click", () => {
+      deleteAlbum(album.id).then((artist) => {
+        renderSingleArtist(mainSection, artist.id);
+      });
+    });
+
     albumLi.addEventListener("click", () => {
       renderSingleAlbum(mainSection, album.id);
     });
@@ -103,21 +115,10 @@ const renderSingleAlbum = (element, albumId) => {
     element.firstChild.remove();
   }
 
-  const link = document.createElement("link");
-
-  link.rel = "stylesheet";
-  link.type = "text/css";
-  link.href = "./src/css/album-layout.css";
-
-  document.getElementsByTagName("HEAD")[0].appendChild(link);
+  document.getElementById("album-layout").disabled = false;
   document.getElementById("artist-layout").disabled = true;
 
-  const link2 = document.createElement("link");
-
-  link2.rel = "stylesheet";
-  link2.type = "text/css";
-  link2.href = "./src/css/album-style.css";
-  document.getElementsByTagName("HEAD")[0].appendChild(link2);
+  document.getElementById("album-style").disabled = false;
   document.getElementById("artist-style").disabled = true;
   fetchSingleAlbum(albumId).then((album) => {
     console.log(album);

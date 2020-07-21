@@ -8,6 +8,9 @@ export {
   fetchSongArtist,
   postNewArtist,
   postNewAlbum,
+  postNewSong,
+  deleteSong,
+  deleteAlbum,
 };
 
 const fetchArtists = async () => {
@@ -68,5 +71,27 @@ const postNewAlbum = async (artistId, album) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(album),
+  }).then((response) => response.json());
+};
+
+const postNewSong = async (albumId, song) => {
+  return fetch(`http://localhost:8080/api/albums/${albumId}/song`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(song),
+  }).then((response) => response.json());
+};
+
+const deleteSong = async (songId) => {
+  return fetch(`http://localhost:8080/api/song/${songId}`, {
+    method: "DELETE",
+  }).then((response) => response.json());
+};
+
+const deleteAlbum = async (albumId) => {
+  return fetch(`http://localhost:8080/api/albums/${albumId}`, {
+    method: "DELETE",
   }).then((response) => response.json());
 };
