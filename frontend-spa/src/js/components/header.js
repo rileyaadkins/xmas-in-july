@@ -16,9 +16,6 @@ const createHeader = () => {
             <li>
               <a href="./artists.html">Artists</a>
             </li>
-            <li>
-              <a href="./albums.html">Albums</a>
-            </li>
           </ul>
         </nav>
   `;

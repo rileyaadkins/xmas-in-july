@@ -6,7 +6,6 @@ import {
   deleteArtist,
 } from "../apiHelper.js";
 import { renderPage } from "../app.js";
-// import { redirectSwitch, randomArtistID, randomAlbum } from "../randomizer.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
@@ -47,15 +46,6 @@ const createAllArtistsSection = (allArtists) => {
     });
 
     artistsUl.appendChild(artistLi);
-
-    // if (redirectSwitch === "artist") {
-    //   setTimeout(() => {
-    //     renderSingleArtist(mainSection, randomArtistID);
-    //   }, 200);
-    //   setTimeout(() => {
-    //     redirectSwitch = "off";
-    //   }, 200);
-    // }
   });
 
   const addArtistLi = document.createElement("li");

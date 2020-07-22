@@ -109,7 +109,7 @@ nav {
   height: 400px;
   width: 400px;
   margin: 0 auto;
-  background-size: contain;
+  background-size: cover;
   border-radius: 20px;
   cursor: pointer;
 }
