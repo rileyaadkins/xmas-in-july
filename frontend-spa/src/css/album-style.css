@@ -17,9 +17,6 @@ a:link {
 a:visited {
   color: black;
 }
-.container {
-  /* background-color: var(--color1-bottle-green); */
-}
 
 h1 {
   font-family: "Courgette", cursive;

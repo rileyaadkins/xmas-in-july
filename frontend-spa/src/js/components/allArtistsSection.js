@@ -1,6 +1,7 @@
 export { createAllArtistsSection, renderSingleArtist };
 import { createSingleArtistSection } from "./singleArtistSection.js";
-import { fetchSingleArtist, postNewArtist } from "../apiHelper.js";
+import { fetchSingleArtist, postNewArtist, deleteArtist } from "../apiHelper.js";
+import { renderPage } from "../app.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
@@ -11,13 +12,35 @@ const createAllArtistsSection = (allArtists) => {
 
   allArtists.forEach((artist) => {
     const artistLi = document.createElement("li");
-    artistLi.innerHTML = `
-    <span class="close">X</span>
-    <div class="artist-pic" style="background-image: url(${artist.imagePath})"></div>
-    <span class="artist-name">${artist.name}</span>`;
-    artistLi.addEventListener("click", () => {
+
+    const artistCloseSpan = document.createElement("span");
+    artistCloseSpan.classList.add("close");
+    artistCloseSpan.innerText = "X";
+    
+    const artistPicDiv = document.createElement("div");
+    artistPicDiv.classList.add("artist-pic");
+    artistPicDiv.style.backgroundImage = `url(${artist.imagePath})`;
+    
+    const artistNameSpan = document.createElement("span");
+    artistNameSpan.classList.add("artist-name");
+    artistNameSpan.innerHTML = `${artist.name}`
+
+    artistLi.append(artistCloseSpan, artistPicDiv, artistNameSpan);
+
+    artistCloseSpan.addEventListener("click", ()=>{
+      deleteArtist(artist.id).then((artists)=>{
+        renderPage(artists);
+      })
+    })
+
+    artistPicDiv.addEventListener("click", () => {
       renderSingleArtist(mainSection, artist.id);
     });
+
+    artistNameSpan.addEventListener("click", () => {
+      renderSingleArtist(mainSection, artist.id);
+    });
+
     artistsUl.appendChild(artistLi);
   });
 
