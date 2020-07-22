@@ -1,7 +1,12 @@
 export { createAllArtistsSection, renderSingleArtist };
 import { createSingleArtistSection } from "./singleArtistSection.js";
-import { fetchSingleArtist, postNewArtist, deleteArtist } from "../apiHelper.js";
+import {
+  fetchSingleArtist,
+  postNewArtist,
+  deleteArtist,
+} from "../apiHelper.js";
 import { renderPage } from "../app.js";
+// import { redirectSwitch, randomArtistID, randomAlbum } from "../randomizer.js";
 
 const createAllArtistsSection = (allArtists) => {
   const mainSection = document.createElement("main");
@@ -16,22 +21,22 @@ const createAllArtistsSection = (allArtists) => {
     const artistCloseSpan = document.createElement("span");
     artistCloseSpan.classList.add("close");
     artistCloseSpan.innerText = "X";
-    
+
     const artistPicDiv = document.createElement("div");
     artistPicDiv.classList.add("artist-pic");
     artistPicDiv.style.backgroundImage = `url(${artist.imagePath})`;
-    
+
     const artistNameSpan = document.createElement("span");
     artistNameSpan.classList.add("artist-name");
-    artistNameSpan.innerHTML = `${artist.name}`
+    artistNameSpan.innerHTML = `${artist.name}`;
 
     artistLi.append(artistCloseSpan, artistPicDiv, artistNameSpan);
 
-    artistCloseSpan.addEventListener("click", ()=>{
-      deleteArtist(artist.id).then((artists)=>{
+    artistCloseSpan.addEventListener("click", () => {
+      deleteArtist(artist.id).then((artists) => {
         renderPage(artists);
-      })
-    })
+      });
+    });
 
     artistPicDiv.addEventListener("click", () => {
       renderSingleArtist(mainSection, artist.id);
@@ -42,6 +47,15 @@ const createAllArtistsSection = (allArtists) => {
     });
 
     artistsUl.appendChild(artistLi);
+
+    // if (redirectSwitch === "artist") {
+    //   setTimeout(() => {
+    //     renderSingleArtist(mainSection, randomArtistID);
+    //   }, 200);
+    //   setTimeout(() => {
+    //     redirectSwitch = "off";
+    //   }, 200);
+    // }
   });
 
   const addArtistLi = document.createElement("li");

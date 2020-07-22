@@ -1,4 +1,4 @@
-import { fetchArtists, fetchSingleArtist } from "./apiHelper.js";
+import { fetchArtists } from "./apiHelper.js";
 import { createFooter } from "./components/footer.js";
 import { createHeader } from "./components/header.js";
 import { createAllArtistsSection } from "./components/allArtistsSection.js";

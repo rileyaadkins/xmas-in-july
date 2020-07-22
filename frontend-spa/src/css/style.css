@@ -10,6 +10,17 @@
   --color6-rich-black: #050609;
 }
 
+#artist-name {
+  font-size: 40pt;
+  font-family: "Poppins", cursive;
+  cursor: pointer;
+}
+
+#artist-name:hover {
+  font-weight: bolder;
+  text-shadow: 0 -3px 3px aliceblue;
+}
+
 a:link {
   color: black;
 }
@@ -78,4 +89,27 @@ nav {
 
 .artist-list .add-artist {
   background-color: var(--color5-gainsboro);
+}
+
+.artist-img {
+  height: 200px;
+  width: 200px;
+  margin: 20px auto 0 auto;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.artist-img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0.7);
+}
+
+.album-img {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  background-size: contain;
+  border-radius: 20px;
+  cursor: pointer;
 }
