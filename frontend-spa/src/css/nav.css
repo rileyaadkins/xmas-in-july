@@ -62,4 +62,5 @@ footer {
 nav li:hover {
   text-shadow: 0 -1px 1px aliceblue;
   font-weight: bolder;
+  cursor: pointer;
 }

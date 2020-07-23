@@ -13,7 +13,6 @@
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  background-color: blue;
 }
 
 h1 {
@@ -51,22 +50,7 @@ nav li {
   transition: all 0.1s;
   background-size: cover;
 }
-.album-list li:nth-child(1) div {
-  background-image: url(/src/images/MC-cover.png);
-}
-.album-list li:nth-child(2) div {
-  background-image: url(/src/images/Last-Christmas-Wham.png);
-}
-.album-list li:nth-child(3) div {
-  background-image: url(/src/images/Home_for_Christmas_nsync.png);
-}
-.album-list li:nth-child(4) div {
-  background-image: url(/src/images/Christmas-Buble.png);
-}
 
-.album-list li:nth-child(5) div {
-  background-image: url(/src/images/Kidz-Bob-Christmas.png);
-}
 .album-pic:hover {
   transform: scale(1.1);
 }
@@ -74,6 +58,7 @@ nav li {
 .songlist-container {
   display: inline-block;
   margin: 0 auto;
+  min-width: 50%;
 }
 
 .album-songlist {
@@ -88,15 +73,24 @@ nav li {
   z-index: 100;
   right: 5px;
   top: 0;
-
 }
 
 .album-songlist li {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.album-songlist li :nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  text-indent: 10px;
 }
 
 .add-song {
-  display:inline-block;
+  display: inline-block;
   padding: 1px 10px;
   position: relative;
   margin: 5px 0 100px -650px;
@@ -110,7 +104,6 @@ nav li {
 
 .add-song:hover .form-container {
   display: block;
-
 }
 
 .add-song::after {
@@ -119,4 +112,3 @@ nav li {
   width: 200px;
   height: 100px;
 }
-
