@@ -34,10 +34,15 @@ public class AlbumController {
         return albumStorage.retrieveById(id);
     }
 
+    @GetMapping("/api/albums/{id}/artist")
+    public Artist getAlbumArtist(@PathVariable long id){
+        return albumStorage.retrieveById(id).getArtist();
+    }
+
     @PatchMapping("/api/albums/{id}/song")
     public Album addSongToAlbum(@PathVariable long id, @RequestBody Song song) {
         Album album = albumStorage.retrieveById(id);
-        Song songToAdd = new Song(song.getSongLength(), song.getSongName(), album);
+        Song songToAdd = new Song(song.getSongLength(), song.getSongName(), album, song.getSongUrl());
         songStorage.save(songToAdd);
         return songToAdd.getSongAlbum();
     }

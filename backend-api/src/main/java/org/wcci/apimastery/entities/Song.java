@@ -17,13 +17,15 @@ public class Song {
     @JsonIgnore
     @ManyToOne
     private Album songAlbum;
+    private String songUrl;
     private String songLength;
 
 
-    public Song(String songLength, String songName, Album songAlbum) {
+    public Song(String songLength, String songName, Album songAlbum, String songUrl) {
         this.songLength = songLength;
         this.songName = songName;
         this.songAlbum = songAlbum;
+        this.songUrl = songUrl;
     }
 
     protected Song() {
@@ -43,5 +45,9 @@ public class Song {
 
     public Album getSongAlbum() {
         return songAlbum;
+    }
+
+    public String getSongUrl() {
+        return songUrl;
     }
 }

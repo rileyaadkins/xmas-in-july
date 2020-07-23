@@ -23,7 +23,9 @@ Content-Type: application/json
 
 {
   "albumTitle": "Test Album",
-  "imagePath": "fdsa"
+  "imagePath": "fdsa",
+  "recordLabel": "Columbia",
+  "releaseYear": "1985"
 }
 
 ###

@@ -17,10 +17,6 @@ a:link {
 a:visited {
   color: black;
 }
-.container {
-  /* background-color: var(--color1-bottle-green); */
-  
-}
 
 h1 {
   font-family: "Courgette", cursive;
@@ -49,10 +45,10 @@ nav {
 }
 
 .album-img {
-  background-image: url(/src/images/MC-cover.png);
   width: 300px;
   height: 300px;
   margin: 0 auto;
+  background-size: cover;
 }
 
 .album-songlist {
@@ -87,8 +83,6 @@ nav {
   font-size: 20pt;
 }
 
-
-
 .album-songlist li:hover .close {
   background-color: var(--color2-sizzling-red);
   visibility: visible;
@@ -116,6 +110,12 @@ nav {
   display: none;
 }
 
+.album-songlist li span:not(.close) {
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+}
+
 .add-song {
   font-size: 20pt;
   font-weight: bolder;
@@ -140,12 +140,13 @@ nav {
 
 .add-song .form-container {
   background-color: var(--color5-gainsboro);
-  padding: 5px 20px;
+  padding: 5px 20px 20px 20px;
   margin-top: 10px;
   border-radius: 20px;
 }
 
-.add-song input:first-child {
+.add-song input:first-child,
+.add-song input:nth-child(2) {
   text-indent: 10px;
   width: 500px;
 }

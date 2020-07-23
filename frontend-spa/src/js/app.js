@@ -1,17 +1,18 @@
-import { fetchArtists, fetchSingleArtist } from "./apiHelper.js";
-import { createFooter } from "./components/footer.js";
-import { createHeader } from "./components/header.js";
+import { fetchArtists } from "./apiHelper.js";
 import { createAllArtistsSection } from "./components/allArtistsSection.js";
+export { renderAllArtists };
 
-const renderPage = (allArtists) => {
-  const container = document.querySelector(".container");
-  while (container.firstChild) {
-    container.firstChild.remove();
+const renderAllArtists = (mainSection) => {
+  while (mainSection.firstChild) {
+    mainSection.firstChild.remove();
   }
-  container.prepend(createHeader());
-  container.appendChild(createAllArtistsSection(allArtists));
-  container.appendChild(createFooter());
+  fetchArtists().then((artists) => {
+    createAllArtistsSection(mainSection, artists);
+  });
+  document.querySelector("#artist-layout").disabled = true;
+  document.querySelector("#artist-style").disabled = true;
+  document.querySelector("#album-layout").disabled = true;
+  document.querySelector("#album-style").disabled = true;
+  document.querySelector("#song-layout").disabled = true;
+  document.querySelector("#song-style").disabled = true;
 };
-
-const allArtists = fetchArtists();
-renderPage(allArtists);
