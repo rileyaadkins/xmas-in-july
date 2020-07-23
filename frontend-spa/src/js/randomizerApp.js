@@ -7,12 +7,16 @@ export const renderPage = () => {
   while (container.firstChild) {
     container.firstChild.remove();
   }
-  container.prepend(createHeader());
-  container.appendChild(createRandomizerSection());
+  const mainSection = document.createElement("main");
+  container.prepend(createHeader(mainSection));
+  container.appendChild(createRandomizerSection(mainSection));
   container.appendChild(createFooter());
   document.querySelector("#artist-layout").disabled = true;
+  document.querySelector("#artist-style").disabled = true;
+  document.querySelector("#album-layout").disabled = true;
+  document.querySelector("#album-style").disabled = true;
+  document.querySelector("#song-layout").disabled = true;
+  document.querySelector("#song-style").disabled = true;
 };
 
 renderPage();
-
-

@@ -1,8 +1,10 @@
-import { fetchArtists } from "../apiHelper.js";
-import { createSingleArtistSection } from "./singleArtistSection.js";
+import { fetchArtists, fetchSingleArtist } from "../apiHelper.js";
+import {
+  createSingleArtistSection,
+  renderSingleAlbum,
+} from "./singleArtistSection.js";
 
-export const createRandomizerSection = () => {
-  const mainSection = document.createElement("main");
+export const createRandomizerSection = (mainSection) => {
   const randomArtistSection = document.createElement("section");
   randomArtistSection.classList.add("random-artist");
   const titleH1 = document.createElement("h1");
@@ -39,24 +41,23 @@ export const createRandomizerSection = () => {
     artistImgDiv.addEventListener("click", () => {
       renderSpotlightArtist(mainSection, randomArtist.id);
     });
-    albumImgDiv.addEventListener("click", () => {});
+    albumImgDiv.addEventListener("click", () => {
+      renderSingleAlbum(mainSection, randomAlbum.id);
+    });
   });
 
   return mainSection;
 };
 
-
-
-
 const renderSpotlightArtist = (element, artistId) => {
-    while (element.firstChild) {
-      element.firstChild.remove();
-    }
-  
-    document.getElementById("artist-layout").disabled = false;
-    document.getElementById("artist-style").disabled = false;
-  
-    fetchSingleArtist(artistId).then((artist) => {
-      createSingleArtistSection(artist, element);
-    });
-  };
+  while (element.firstChild) {
+    element.firstChild.remove();
+  }
+
+  document.getElementById("artist-layout").disabled = false;
+  document.getElementById("artist-style").disabled = false;
+
+  fetchSingleArtist(artistId).then((artist) => {
+    createSingleArtistSection(artist, element);
+  });
+};

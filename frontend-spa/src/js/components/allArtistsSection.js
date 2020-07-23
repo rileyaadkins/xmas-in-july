@@ -5,10 +5,10 @@ import {
   postNewArtist,
   deleteArtist,
 } from "../apiHelper.js";
-import { renderPage } from "../app.js";
+import { renderAllArtists } from "../app.js";
 
-const createAllArtistsSection = (allArtists) => {
-  const mainSection = document.createElement("main");
+const createAllArtistsSection = (mainSection, allArtists) => {
+  // const mainSection = document.createElement("main");
   mainSection.innerHTML = `<h1>Artists</h1>`;
 
   const artistsUl = document.createElement("ul");
@@ -33,7 +33,7 @@ const createAllArtistsSection = (allArtists) => {
 
     artistCloseSpan.addEventListener("click", () => {
       deleteArtist(artist.id).then((artists) => {
-        renderPage(artists);
+        renderAllArtists(artists);
       });
     });
 
@@ -88,7 +88,7 @@ const createAllArtistsSection = (allArtists) => {
   artistsUl.appendChild(addArtistLi);
 
   mainSection.appendChild(artistsUl);
-  return mainSection;
+  // return mainSection;
 };
 
 const renderSingleArtist = (element, artistId) => {
