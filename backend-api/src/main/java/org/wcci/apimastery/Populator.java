@@ -26,9 +26,9 @@ public class Populator implements CommandLineRunner {
         Artist mCarey = new Artist("Mariah Carey", "./src/images/MC.jpeg", "07-March-1970");
         Artist wham = new Artist("Wham!", "./src/images/wham!.png", "25-June-1963");
         Artist mBuble = new Artist("Michael Bublé", "./src/images/MB.png", "09-September-1975");
-        Artist vgTrio = new Artist("Vince Guaraldi Trio", "./src/images/VGT.png", "17-July-1928", "Fantasy Records");
-        Artist kidsBop = new Artist("Kids Bop", "./src/images/kidsbop.png", "09-October-2001", "Razor & Tie");
-        Artist nsync = new Artist("*NSYNC", "./src/images/nsync.jpg", "26-May-1997", "Jive Records");
+        Artist vgTrio = new Artist("Vince Guaraldi Trio", "./src/images/VGT.png", "17-July-1928");
+        Artist kidsBop = new Artist("Kids Bop", "./src/images/kidsbop.png", "09-October-2001");
+        Artist nsync = new Artist("*NSYNC", "./src/images/nsync.jpg", "26-May-1997");
 
         artistRepo.save(mCarey);
         artistRepo.save(wham);
@@ -43,7 +43,7 @@ public class Populator implements CommandLineRunner {
         Album lastXmas = new Album("Last Christmas", "./src/images/Last-Christmas-Wham.png", wham, "1984", "Innervision");
         Album xmas3 = new Album("Christmas", "./src/images/Christmas-Buble.png", mBuble, "2011", "Reprise");
         Album charlieBrown = new Album("A Charlie Brown Christmas", "./src/images/charlie-brown.png", vgTrio, "1965", "Fantasy Records");
-        Album kidsBopXmas = new Album("Kids Bop Christmas", "./src/images/Kidz-Bob_Christmas.png", kidsBop, "2018", "Razor & Tie");
+        Album kidsBopXmas = new Album("Kids Bop Christmas", "./src/images/Kidz-Bob-Christmas.png", kidsBop, "2018", "Razor & Tie");
         Album homeForChristmas = new Album("Home For Christmas", "./src/images/Home_for_Christmas_nsync.png", nsync, "1998", "Trans Continental");
 
         albumRepo.save(xmas1);
@@ -61,10 +61,10 @@ public class Populator implements CommandLineRunner {
         Song mcMc_2 = new Song("4:01", "All I Want for Christmas Is You", xmas1, "https://www.youtube-nocookie.com/embed/yXQViqx6GMY");
         Song mcMc_3 = new Song("4:27", "O Holy Night", xmas1, "https://www.youtube-nocookie.com/embed/bM9UGg1FINk");
         Song mcMc_4 = new Song("2:33", "Christmas (Baby Please Come Home)", xmas1, "https://www.youtube-nocookie.com/embed/ah-U9ECRZog");
-        Song mcMc_5 = new Song("4:32", "Miss You Most (At Christmas Time)", xmas1, "https://www.youtube-nocookie.com/embed/vAOIC737e_k");=
-        Song mcMc_6 = new Song("4:18", "Joy To The World", xmas1, "https://www.youtube-nocookie.com/embed/1tcbarFCk3w");=
-        Song mcMc_7 = new Song("3:41", "Jesus Born on This Day", xmas1, "https://www.youtube-nocookie.com/embed/YGfcSxynZu8");=
-        Song mcMc_8 = new Song("3:24", "Santa Claus is Coming To Town", xmas1, "https://www.youtube-nocookie.com/embed/OsyxFkYZ-aU");=
+        Song mcMc_5 = new Song("4:32", "Miss You Most (At Christmas Time)", xmas1, "https://www.youtube-nocookie.com/embed/vAOIC737e_k");
+        Song mcMc_6 = new Song("4:18", "Joy To The World", xmas1, "https://www.youtube-nocookie.com/embed/1tcbarFCk3w");
+        Song mcMc_7 = new Song("3:41", "Jesus Born on This Day", xmas1, "https://www.youtube-nocookie.com/embed/YGfcSxynZu8");
+        Song mcMc_8 = new Song("3:24", "Santa Claus is Coming To Town", xmas1, "https://www.youtube-nocookie.com/embed/OsyxFkYZ-aU");
         Song mcMc_9 = new Song("2:59", "Hark! The Herald Angels Sing / Gloria (In Excelsis Deo)", xmas1, "https://www.youtube-nocookie.com/embed/Y7hPy8EJnRU");
         Song mcMc_10 = new Song("4:26", "Jesus Oh What a Wonderful Child", xmas1,"https://www.youtube-nocookie.com/embed/hPCyMkDxh0M");
 
@@ -122,8 +122,8 @@ public class Populator implements CommandLineRunner {
         Song mbC_5 = new Song("2:52", "All I Want for Christmas Is You", xmas3, "https://www.youtube.com/embed/pw3PhhSfcQg");
         Song mbC_6 = new Song("2:00", "Holly Jolly Christmas", xmas3, "https://www.youtube.com/embed/Dkq3LD-4pmM");
         Song mbC_7 = new Song("3:52", "Santa Baby", xmas3, "https://www.youtube.com/embed/JnOLam2AwXY");
-        Song mbC_8 = new Song("3:50", "Have Yourself a Merry Little Christmas", xmas3 "https://www.youtube.com/embed/l3l83C-we-k");
-        Song mbC_9 = new Song("3:08", "Christmas (Baby Please Come Home)", xmas3, "https://www.youtube.com/embed/mBycW6iu8GM";
+        Song mbC_8 = new Song("3:50", "Have Yourself a Merry Little Christmas", xmas3, "https://www.youtube.com/embed/l3l83C-we-k");
+        Song mbC_9 = new Song("3:08", "Christmas (Baby Please Come Home)", xmas3, "https://www.youtube.com/embed/mBycW6iu8GM");
         Song mbC_10 = new Song("3:48", "Silent Night", xmas3, "https://www.youtube.com/embed/-iZGh91-v7Y");
         Song mbC_11 = new Song("3:42", "Blue Christmas", xmas3, "https://www.youtube.com/embed/im2JjOhTW80");
         Song mbC_12 = new Song("3:18", "Cold December Night", xmas3, "https://www.youtube.com/embed/XtB0LqyJsdA");
@@ -146,7 +146,6 @@ public class Populator implements CommandLineRunner {
         songRepo.save(mbC_13);
         songRepo.save(mbC_14);
         songRepo.save(mbC_15);
-        songRepo.save(mbC_16);
 
 
         /* A Charlie Brown Christmas */
@@ -187,7 +186,7 @@ public class Populator implements CommandLineRunner {
         Song kbC_3 = new Song("3:17", "All I Want For Christmas Is You", kidsBopXmas,"https://www.youtube.com/embed/zkVoSlEbnHE");
         Song kbC_4 = new Song("3:01", "Santa Tell Me", kidsBopXmas,"https://www.youtube.com/embed/zkVoSlEbnHE");
         Song kbC_5 = new Song("2:42", "Let It Snow! Let It Snow! Let It Snow!", kidsBopXmas,"https://www.youtube.com/embed/PqojzxyRoRE");
-        Song kbC_6 = new Song("3:21", "Have Yourself A Merry Little Christmas", kidsBopXmas),"https://www.youtube.com/embed/ch8Gafg6CuI";
+        Song kbC_6 = new Song("3:21", "Have Yourself A Merry Little Christmas", kidsBopXmas,"https://www.youtube.com/embed/ch8Gafg6CuI");
         Song kbC_7 = new Song("2:54", "Mistletoe", kidsBopXmas, "https://www.youtube.com/embed/rUnP2qKuS68");
         Song kbC_8 = new Song("2:07", "Rockin' Around The Christmas", kidsBopXmas,"https://www.youtube.com/embed/PCxZtv9_edc");
         Song kbC_9 = new Song("2:20", "Christmas (Baby Please Come Home)", kidsBopXmas,"https://www.youtube.com/embed/nU6DqTDh57Y");
@@ -256,6 +255,7 @@ public class Populator implements CommandLineRunner {
         songRepo.save(nSC_3);
         songRepo.save(nSC_4);
         songRepo.save(nSC_5);
+        songRepo.save(nSC_6);
         songRepo.save(nSC_7);
         songRepo.save(nSC_8);
         songRepo.save(nSC_9);

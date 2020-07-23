@@ -33,7 +33,7 @@ const createAllArtistsSection = (mainSection, allArtists) => {
 
     artistCloseSpan.addEventListener("click", () => {
       deleteArtist(artist.id).then((artists) => {
-        renderAllArtists(artists);
+        renderAllArtists(mainSection);
       });
     });
 

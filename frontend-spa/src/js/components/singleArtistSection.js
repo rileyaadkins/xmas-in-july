@@ -22,9 +22,15 @@ const createSingleArtistSection = (singleArtist, mainSection) => {
   albumDiv.appendChild(albumUl);
   singleArtist.albums.forEach((album) => {
     const albumLi = document.createElement("li");
-    albumLi.innerHTML = `
-    <div class="album-pic" style="background-image: url(${album.imagePath})"></div>
-    <span class="album-name">${album.albumTitle}</span>`;
+    const albumPicDiv = document.createElement("div");
+    albumPicDiv.classList.add("album-pic");
+    albumPicDiv.style.backgroundImage = `url(${album.imagePath})`;
+
+    const albumNameSpan = document.createElement("span");
+    albumNameSpan.classList.add("album-name");
+    albumNameSpan.innerText = `${album.albumTitle}`;
+
+    albumLi.append(albumPicDiv, albumNameSpan);
 
     const closeButton = document.createElement("span");
     closeButton.classList.add("close");
@@ -38,7 +44,10 @@ const createSingleArtistSection = (singleArtist, mainSection) => {
       });
     });
 
-    albumLi.addEventListener("click", () => {
+    albumPicDiv.addEventListener("click", () => {
+      renderSingleAlbum(mainSection, album.id);
+    });
+    albumNameSpan.addEventListener("click", () => {
       renderSingleAlbum(mainSection, album.id);
     });
     albumUl.appendChild(albumLi);
