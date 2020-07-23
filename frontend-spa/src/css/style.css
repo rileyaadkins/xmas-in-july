@@ -10,6 +10,17 @@
   --color6-rich-black: #050609;
 }
 
+#artist-name {
+  font-size: 40pt;
+  font-family: "Poppins", cursive;
+  cursor: pointer;
+}
+
+#artist-name:hover {
+  font-weight: bolder;
+  text-shadow: 0 -3px 3px aliceblue;
+}
+
 a:link {
   color: black;
 }
@@ -50,7 +61,6 @@ nav {
   font-size: 50pt;
 }
 
-
 .artist-list li:hover:not(:last-of-type) .close {
   background-color: var(--color2-sizzling-red);
   border-radius: 50%;
@@ -62,13 +72,44 @@ nav {
   font-size: 17pt;
 }
 
+.artist-list li span, .artist-list div {
+  cursor: pointer;
+}
+
 .artist-list .close {
   visibility: hidden;
 }
 
-.artist-list li:last-of-type div {
+.artist-list li:last-of-type .plus-sign {
   font-size: 100pt;
   line-height: 100pt;
   background-color: var(--color5-gainsboro);
+  cursor: pointer;
+}
+
+.artist-list .add-artist {
+  background-color: var(--color5-gainsboro);
+}
+
+.artist-img {
+  height: 200px;
+  width: 200px;
+  margin: 20px auto 0 auto;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.artist-img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0.7);
+}
+
+.album-img {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 20px;
   cursor: pointer;
 }

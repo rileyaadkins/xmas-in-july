@@ -18,17 +18,16 @@ public class Artist {
     private String name;
     private String imagePath;
     private String dob;
-    private String recordLabel;
+
 
     protected Artist() {
 
     }
 
-    public Artist(String name, String imagePath, String dob, String recordLabel) {
+    public Artist(String name, String imagePath, String dob) {
         this.name = name;
         this.imagePath = imagePath;
         this.dob = dob;
-        this.recordLabel = recordLabel;
     }
 
     public long getId() {
@@ -51,7 +50,4 @@ public class Artist {
         return dob;
     }
 
-    public String getRecordLabel() {
-        return recordLabel;
-    }
 }

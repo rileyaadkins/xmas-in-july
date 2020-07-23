@@ -98,23 +98,23 @@ nav li {
 }
 
 .add-artist {
-  height: 100px;
+  height: auto;
   position: relative;
   border-radius: 15px;
   display: none;
+  padding: 5px 0 10px 0;
 }
 
 .add-artist input {
-  position: absolute;
-  top: 15px;
+  display: block;
+  position: relative;
   left: 10px;
   width: 180px;
   text-align: center;
+  margin: 5px 0;
 }
 
 .add-artist button {
-  position: absolute;
-  top: 60px;
   left: 10px;
   width: 180px;
 }
